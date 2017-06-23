@@ -1,0 +1,22 @@
+profile-suggestions:
+  heading:
+    img:
+      path: "assets/img/learningPaths/learningPath_banner.png"
+      alt: "Finding your learning path"
+    title: "Suggestions based on your profile:"
+    description: "The Virtual Skills School has hundreds of courses to select from. To help tailor the experience to your needs, we’ve taken a look at your profile and think these learning paths will be the most fitting to your needs."
+  recommendations:
+    - "EntrepreneurshipBasics"
+    - "ExpandHorizons"
+    - "BasicsBusinessDev"
+browse-all:
+  heading:
+    img:
+      path: ""
+      alt: ""
+    title: "Browse all learning paths"
+    description: "The Virtual Skills School has hundreds of courses to select from. Below is an overview of a few of the primary learning paths available which are all comprised of dozens of courses that round out a curriculum for each area."
+  recommendations:
+    - "SkillsForLife"
+    - "Foundational"
+    - "Vocational"

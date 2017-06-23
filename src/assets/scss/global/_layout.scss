@@ -1,0 +1,256 @@
+html {}
+body {
+    height: 100%;
+
+    @include breakpoint(medium down) {
+      margin-top: 72px;
+    }
+}
+
+body[data-whatinput="touch"] {
+    .off-canvas-wrapper {
+       -webkit-overflow-scrolling: touch !important;
+    }
+}
+
+section {
+  //margin: 4rem 0;///
+}
+
+// Shrink FIX
+.shrink {
+    width: auto;
+}
+
+// Generic layout classes
+$module: '.lt';
+#{$module} {
+
+  &-bg {
+      &-grey {
+          background-color: $light-gray;
+      }
+      &-white {
+          background-color: $white;
+      }
+  }
+
+  &-wrapper {
+    padding: 10px;
+  }
+
+  &-row-spacer {
+    margin-bottom: 10px;
+  }
+
+  &-main-content {
+    margin:0;
+
+    @include breakpoint(medium down) {
+      margin-top: 60px;
+    }
+
+    &>.rail-container {
+        @include flex-grid-column(3, 4rem);
+        padding-left: 1rem !important;
+
+        @include breakpoint(medium down) {
+            @include flex-grid-column(12, 2rem);
+            padding-left: 0rem !important;
+            margin-bottom: 1rem;
+        }
+    }
+    &>.content-container {
+        @include flex-grid-column(9, 4rem);
+        padding-right: 1rem !important;
+
+        @include breakpoint(medium down) {
+            @include flex-grid-column(12, 2rem);
+            border: none;
+            padding-left: 1rem !important;
+
+        }
+    }
+
+    &:before, &:after {
+        display: block !important;
+    }
+
+
+    &.row {
+        margin: 4rem auto;
+    }
+
+    .content.type-body-copy {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      word-break: break-word;
+      word-wrap: hyphenate;
+
+        &.alpha {
+            color: white;
+        }
+
+    }
+
+    @include breakpoint(large only) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include breakpoint(medium down) {
+        padding-left: 1rem;
+        padding-right: 1rem
+    }
+
+
+    &.lt-window-sized {
+        display: table;
+        width: 100%;
+
+        @include breakpoint(medium down) {
+            padding-top: 80px;
+        }
+
+        &>div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+  }
+
+  &-collapse {
+    margin:0;
+
+    @include breakpoint(medium down) {
+      margin-top: 60px;
+    }
+  }
+  &-margin {
+    &-padding {
+      &-large {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      &-medium {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      &-small {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-lower {
+      &-large {
+        margin-bottom: 4rem;
+      }
+
+      &-medium {
+        margin-bottom: 2rem;
+      }
+
+      &-small {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &-primary-bg-color {
+    background-color: $primary-color;
+    color: $white;
+
+    a {
+      color: white;
+
+      &:hover {color: $secondary-color;}
+    }
+    &>*
+    {
+      color: white !important;
+    }
+  }
+
+  &-alternate-bg-color {
+    background-color: $pale-gray;
+
+    &-gray {
+      background-color: $medium-gray;
+    }
+
+    &-light-gray {
+        background-color: $light-gray;
+    }
+  }
+
+  &-inline {
+    display: inline-block;
+
+
+  }
+
+  &-section-padding {
+    &-large {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+
+      &>h1 {margin-bottom: 4rem;}
+    }
+    &-medium {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+
+      &-horizontal {
+          padding-left: 2rem;
+          padding-right: 2rem;
+      }
+
+      &>h1 {margin-bottom: 2rem;}
+    }
+    &-small {
+      padding-top: 1rem;
+      padding-bottom:1rem;
+
+      &-all {
+          padding: 1rem;
+      }
+
+      &>h1 {margin-bottom: 1rem;}
+    }
+  }
+
+  /*
+  Compiled layout classes
+  This combine specific items into a single class for ease of use
+  */
+
+    &-collapse {
+      max-width: none;
+    }
+
+    &-padding-collapse {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    &-content-full {
+      @include grid-column(12);
+
+      &:last-child {
+        float: none;
+      }
+    }
+}
+
+.medium-centered {
+  margin-left: auto;
+  margin-right:  auto;
+}
+
+.lt-border-compressed {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

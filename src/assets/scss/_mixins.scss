@@ -1,0 +1,304 @@
+// Typography
+// Font size
+@mixin font-size($sizeValue: 1.6) {
+  font-size: $sizeValue + px;
+  font-size: rem-calc($sizeValue);
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+//Rem Fallback
+// @param {String} $property - property to manipulate
+// @param {Number} $values - values to apply
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+// Responsive lazy load padding trick
+$intrinsic-ratio: 16/9 !default;
+$intrinsic-ratio-width: 100% !default;
+$intrinsic-ratio-elements: '> *' !default;
+$intrinsic-ratio-extend: true !default;
+$intrinsic-ratio-direction: bottom !default;
+
+@mixin type-styles() {
+  &-bold {
+    font-weight: 700;
+  }
+  &-italics {
+    font-style: italic;
+  }
+}
+
+
+@mixin type-body-copy($color: $black, $size: 1.6) {
+    color: $color;
+    font-size: strip-unit(rem-calc(($size * 10))) + px;
+    font-size: strip-unit(rem-calc($size)) + rem;
+}
+
+
+
+
+@mixin intrinsic-ratio-parent($extend: $intrinsic-ratio-extend) {
+    @if $extend {
+      @extend %intrinsic-ratio-parent;
+    }
+    @else {
+      display: block;
+      position: relative;
+      height: 0;
+    }
+}
+
+@mixin intrinsic-ratio-child($extend: $intrinsic-ratio-extend) {
+  @if $extend {
+    @extend %intrinsic-ratio-child;
+  }
+  @else {
+    display: block;
+    position: absolute;
+    width: 100%; // !important Nuke the external styles
+    height: 100%; // !important Nuke the external styles
+    top: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin intrinsic-ratio-ratio($ratio: $intrinsic-ratio, $width: $intrinsic-ratio-width, $direction: $intrinsic-ratio-direction) {
+  padding-#{$direction}: (1 / $ratio) * $width;
+  width: $width;
+}
+
+@mixin intrinsic-ratio($ratio: $intrinsic-ratio, $width: $intrinsic-ratio-width, $elements: $intrinsic-ratio-elements, $extend: $intrinsic-ratio-extend, $direction: $intrinsic-ratio-direction) {
+  @include intrinsic-ratio-parent($extend);
+  @include intrinsic-ratio-ratio($ratio, $width, $direction);
+
+  @each $element in $elements {
+    #{$element} {
+       @include intrinsic-ratio-child($extend);
+    }
+  }
+}
+
+@mixin fixed-ratiobox($ratio: $intrinsic-ratio, $width: $intrinsic-ratio-width, $elements: $intrinsic-ratio-elements, $extend: $intrinsic-ratio-extend, $direction: $intrinsic-ratio-direction) {
+  @include intrinsic-ratio($ratio, $width, $elements, $extend, $direction);
+}
+
+%intrinsic-ratio-parent {
+  @include intrinsic-ratio-parent(false);
+}
+
+%intrinsic-ratio-child {
+  @include intrinsic-ratio-child(false);
+}
+
+@mixin img-size($sizeValue: 100, $dim: width, $second: height) {
+  $dim: strip-unit(rem-calc(($sizeValue * 10))) + px;
+  $dim: strip-unit(rem-calc($sizeValue)) + rem;
+  $second: auto;
+}
+
+// generic transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+	     -o-transform-origin: $origin;
+	    -ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+
+//border-radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+// Linear Gradient Mixin
+/// Convert angle
+/// @author Chris Eppstein
+/// @param {Number} $value - Value to convert
+/// @param {String} $unit - Unit to convert to
+/// @return {Number} Converted angle
+@function convert-angle($value, $unit) {
+  $convertable-units: deg grad turn rad;
+  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+    @return $value
+             / nth($conversion-factors, index($convertable-units, unit($value)))
+             * nth($conversion-factors, index($convertable-units, $unit));
+  }
+
+  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+}
+
+/// Test if `$value` is an angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value) {
+  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-direction or $is-angle;
+}
+
+/// Convert a direction to legacy syntax
+/// @param {Keyword | Angle} $value - Value to convert
+/// @require {function} is-direction
+/// @require {function} convert-angle
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+  }
+
+  $conversion-map: (
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - convert-angle($value, 'deg');
+}
+
+/// Mixin printing a linear-gradient
+/// as well as a plain color fallback
+/// and the `-webkit-` prefixed declaration
+/// @access public
+/// @param {String | List | Angle} $direction - Linear gradient direction
+/// @param {Arglist} $color-stops - List of color-stops composing the gradient
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: ($direction, $color-stops);
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+
+//
+//  Function to replace characters in a string
+//
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace +
+        str-replace(str-slice($string, $index +
+        str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+//SVG AS BACKGROUNDS SEE http://codepen.io/tigt/post/optimizing-svgs-in-data-uris for guidance
+@function svg-url($svg){
+    //
+    // Chunk up string in order to avoid
+    // "SystemStackError: stack level too deep"
+    //
+    $encoded:'';
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(str-length($svg)/$slice);
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1);
+        $chunk: str-replace($chunk,'"','\'');
+        $chunk: str-replace($chunk,'<','%3C');
+        $chunk: str-replace($chunk,'>','%3E');
+        $chunk: str-replace($chunk,'&','%26');
+        $chunk: str-replace($chunk,'#','%23');
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+    @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}
+
+@mixin background-arrow($direction: 'down', $fill: rgb(0,0,0), $strokeWidth: '1px') {
+  @if $direction == 'down' {
+    background-image:svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5"><polyline points="0,0 4.5,4.5" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /><polyline points="4.5,4.5 9,0" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /></svg>');
+  } @else if $direction == 'up' {
+    background-image:svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5"><polyline points="0,5 4.5,0.5" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /><polyline points="4.5,0.5 9,5" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /></svg>');
+  }
+  @else if $direction == 'right' {
+    background-image:svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12"><polyline points="0,0 6,6" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /><polyline points="6,6 0,12" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /></svg>');
+  }
+  @else if $direction == 'left' {
+    background-image:svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12"><polyline points="6,0 0,6" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /><polyline points="6,12 0,6" style="stroke-width: #{$strokeWidth}; stroke:#{$fill};" /></svg>');
+  }
+  background-repeat: no-repeat;
+}

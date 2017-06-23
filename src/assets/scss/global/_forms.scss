@@ -1,0 +1,718 @@
+/* EMPOWER WOMEN FORM STYLES */
+
+.form {
+  font-family: $alternate-font;
+  .zh & {
+    font-family: $special-alternate-font;
+  }
+  input {
+      outline: none;
+  }
+  &:not(.login-form) {
+    .input-wrapper {
+      @include flex-grid-column(6, 4rem);
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      @include breakpoint(small only) {
+        @include flex-grid-column(12, 2rem);
+      }
+    }
+  }
+  .input-wrapper > label {
+    @extend .type-subtitle-small;
+  }
+  .input {
+    border-radius: $form-field-border-radius;
+    min-height: 50px;
+    outline: 0;
+  }
+  .select {
+    border-radius: $form-field-border-radius;
+    color: $black;
+    height: 40px;
+    background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="55" height="50" viewBox="0 0 55 50"><rect height="50" width="55" style="fill: #{$medium-gray}; stroke: none;" /><polyline points="19,22 27.5,30" style="fill: none; stroke-width: 2px; stroke:#{$white};" /><polyline points="27.5,31 36,22" style="fill: none; stroke-width: 2px; stroke:#{$white};" /></svg>');
+    background-size: 43px 40px;
+    background-position: right -43px center;
+    background-color: $white;
+    padding-right: 43px;
+    @include font-size(16);
+
+    @include breakpoint(medium down) {
+        @include font-size(12);
+    }
+
+    &.is-white {
+      background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="55" height="50" viewBox="0 0 55 50"><rect height="50" width="55" style="fill: #{$white}; stroke: #{$medium-gray}; stroke-width: 1px" /><polyline points="19,22 27.5,30" style="fill: none; stroke-width: 2px; stroke:#{$medium-gray};" /><polyline points="27.5,31 36,22" style="fill: none; stroke-width: 2px; stroke:#{$medium-gray};" /></svg>');
+    }
+
+    &:disabled, &.disabled {
+        background-color: lighten($light-gray, 90);
+    }
+  }
+
+  .is-invalid-label {
+      .form-error {display: block;}
+
+  }
+  .related-fields {
+      margin-bottom:1rem;
+      input {
+          margin-bottom:0;
+      }
+  }
+
+  .fieldset {
+      border:0;
+      padding:0;
+
+      &-wrapper {
+          border-top:1px solid $light-gray;
+          border-bottom:1px solid $light-gray;
+          margin:40px 0;
+          padding:20px 0;
+
+      }
+  }
+
+  .textarea {
+    height: 200px;
+    border-radius: $global-small-radius;
+
+    + .form-error {
+      margin-top: 8px;
+    }
+  }
+
+  .file-upload {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+    & + .file-label {
+      display: block;
+      overflow:hidden;
+      position:relative;
+      height: 50px;
+      padding: 0 15px;
+      cursor: pointer;
+      background-color: $white;
+      line-height: 50px;
+      margin-bottom: 10px;
+      border-radius: $form-field-border-radius;
+      border: 1px solid $medium-gray;
+
+      .file-input-browse {
+        position:absolute;
+        right:0px;
+        background-color:$medium-gray;
+        padding: 0 1rem;
+      }
+
+      .file-input-msg {
+          position: absolute;
+          left: 0;
+          padding: 0 1rem;
+      }
+
+      &.is-invalid-label {
+          background-color: rgba($secondary-color, 0.1);
+          border-color: $secondary-color;
+
+          .file-input-browse {
+              background-color: $secondary-color;
+              color: $white;
+          }
+      }
+    }
+  }
+  @media screen {
+    .switch-toggle {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background-color: $light-gray;
+      padding: 0;
+      margin: 0 0 1rem;
+      height: 50px;
+      border-radius: $global-small-radius;
+      color: $white;
+
+      &.is-light {
+        background-color: $white;
+        color: $medium-gray-accent;
+
+        a {
+          border-color: $white;
+        }
+
+        label {
+          color: $medium-gray-accent;
+        }
+
+        input:checked + label {
+          color: $white;
+        }
+
+        input:checked + label.dark-gray {
+          color: $body-font-color;
+        }
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      label {
+        line-height: 50px;
+        vertical-align: middle;
+        color: $white;
+
+      }
+      input {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+      }
+      input + label {
+        position: relative;
+        z-index: 2;
+        display: block;
+        float: left;
+        padding: 0 0.5rem;
+        margin: 0;
+        text-align: center;
+        @include font-size(16);
+        font-weight:700;
+      }
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        z-index: 1;
+        width: 10px;
+        height: 100%;
+        display: block;
+        transition: all 0.2s ease-out;
+        border-radius: $global-small-radius;
+        border: 5px solid $light-gray;
+
+        span {
+          display:block;
+          height:100%;
+          background-color: $secondary-red;
+          border-radius: $global-small-radius;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+      }
+
+
+
+      /* 2 items
+       */
+      label:nth-child(2):nth-last-child(4),
+      label:nth-child(2):nth-last-child(4) ~ label,
+      label:nth-child(2):nth-last-child(4) ~ a {
+        width: 50%;
+      }
+      label:nth-child(2):nth-last-child(4) ~ input:checked:nth-child(3) + label ~ a {
+        left: 50%;
+      }
+
+      //Change color when item is stories
+      /* 2 items
+       */
+      label:nth-child(2):nth-last-child(4) ~ input#stories:checked:nth-child(3) + label ~ a {
+        span {
+          background-color: $medium-gray;
+
+        }
+      }
+
+      /* 3 items
+       */
+      label:nth-child(2):nth-last-child(6),
+      label:nth-child(2):nth-last-child(6) ~ label,
+      label:nth-child(2):nth-last-child(6) ~ a {
+        width: 33.33%;
+      }
+      label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(3) + label ~ a {
+        left: 33.33%;
+      }
+      label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(5) + label ~ a {
+        left: 66.66%;
+      }
+
+      /* 4 items
+       */
+      label:nth-child(2):nth-last-child(8),
+      label:nth-child(2):nth-last-child(8) ~ label,
+      label:nth-child(2):nth-last-child(8) ~ a {
+        width: 25%;
+      }
+      label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(3) + label ~ a {
+        left: 25%;
+      }
+      label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(5) + label ~ a {
+        left: 50%;
+      }
+      label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(7) + label ~ a {
+        left: 75%;
+      }
+
+      /* 5 items
+       */
+      label:nth-child(2):nth-last-child(10),
+      label:nth-child(2):nth-last-child(10) ~ label,
+      label:nth-child(2):nth-last-child(10) ~ a {
+        width: 20%;
+      }
+      label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(3) + label ~ a {
+        left: 20%;
+      }
+      label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(5) + label ~ a {
+        left: 40%;
+      }
+      label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(7) + label ~ a {
+        left: 60%;
+      }
+      label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(9) + label ~ a {
+        left: 80%;
+      }
+
+      /* 6 items
+       */
+      label:nth-child(2):nth-last-child(12),
+      label:nth-child(2):nth-last-child(12) ~ label,
+      label:nth-child(2):nth-last-child(12) ~ a {
+        width: 16.6%;
+      }
+      label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(3) + label ~ a {
+        left: 16.6%;
+      }
+      label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(5) + label ~ a {
+        left: 33.2%;
+      }
+      label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(7) + label ~ a {
+        left: 49.8%;
+      }
+      label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(9) + label ~ a {
+        left: 66.4%;
+      }
+      label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(11) + label ~ a {
+        left: 83%;
+      }
+    }
+  }
+
+  .tag-field {
+    margin-bottom: 1rem;
+    input {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      height:35px;
+    }
+    label {
+      @include rem-fallback(margin, 0, 0.3125, 0.625);
+    }
+
+    input:checked + label {
+      background-color: $secondary-color;
+      color: $white;
+    }
+
+    legend {
+      @include rem-fallback(margin-bottom, 0.625);
+    }
+
+  }
+
+  small {
+    color: $secondary-color;
+    text-align: left;
+
+    &.terms {
+        margin: 0;
+
+    }
+
+    &.error {
+      display: none;
+    }
+    &.upload-form-error {
+      display: none;
+    }
+
+    &.required {
+      float: right;
+      margin-top: 4px;
+
+      &:before {
+        content: "*";
+      }
+    }
+  }
+
+  legend {
+    margin-bottom: 0;
+    width: 100%;
+
+    & + small.required {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  fieldset {
+    position: relative;
+
+    .fieldset {
+      margin: .75rem 0
+    }
+
+    .form legend + small.required {
+      padding-left: 2px;
+      background: $white;
+      font-weight: bold;
+      font-size: 90%;
+      opacity: 1;
+    }
+
+    &.horizontal {
+      .form-row {
+          & > div {
+        display: inline-block;
+      }
+
+        &.terms-container {
+            padding: rem-calc(5px) 0 rem-calc(15px);
+    }
+  }
+    }
+  }
+
+  .postscript {
+    font-weight: 400;
+    color:$body-font-color;
+  }
+
+  &.horizontal {
+  	margin: 2rem 0;
+
+    .form-row {
+      display: inline-block;
+    }
+
+    label {
+      @extend .type-header-small;
+      display: inline-block;
+    }
+
+  	select {
+  		width: auto;
+  		min-width: 300px;
+  		margin: 0 1rem;
+  	}
+
+  	button.lt-inline {
+  		margin-top: -.325rem;
+  	}
+
+    @include breakpoint(medium down) {
+
+      .form-row {
+        margin-bottom: 1rem;
+      }
+
+      label {
+        display: block;
+      }
+
+      button.lt-inline {
+    		margin-top: 1rem;
+    	}
+    }
+  }
+
+  .checkbox-container {
+      position: relative;
+
+      input[type='checkbox'] {
+        position:absolute;
+        left:-9999px;
+        display:none;
+
+        & ~ label.checkbox {
+            position:relative;
+            padding-left: 1.75rem;
+            cursor: pointer;
+            color:$medium-gray-accent;
+
+            &:before {
+                content: ' ';
+                position:absolute;
+                left:0px;
+                top:3px;
+                width:20px;
+                height:20px;
+                border:1px solid grey;
+                border-radius: 4px;
+            }
+
+            &:after {
+                opacity: 0;
+                content: "\2714";
+                position:absolute;
+                top: 2px;
+                left: 3px;
+                font-size: 18px;
+                line-height: 20px;
+                color: $secondary-color;
+            }
+        }
+
+        &:checked ~ label.checkbox::after {
+            opacity: 1;
+        }
+
+        &:disabled ~ label, &.disabled ~ label {
+            opacity: 0.25;
+            cursor: auto;
+        }
+
+        &:focus ~ label, & ~ label:hover {
+            color: $secondary-color;
+        }
+      }
+  }
+
+  .horizontal .checkbox-container {
+    padding: rem-calc(5px) 0 rem-calc(10px);
+
+    .form-error {
+        margin: rem-calc(5px) 0 0;
+  }
+  }
+
+  &.multi-faceted {
+
+      .global-search {
+          &.search-component-keywords {
+              &>.input-wrapper {
+                @include flex-grid-column();
+              }
+
+              .input-group {
+                  position: relative;
+
+                  &>:first-child {
+                      @include border-radius($global-radius)
+                  }
+              }
+          }
+      }
+
+      small-12.accordion-filter {
+          margin: 0;
+      }
+
+      .search-component {
+          &.form {
+             border-bottom: 1px solid $medium-gray;
+             padding-bottom:.25rem;
+             margin-bottom: .25rem;
+
+             &:last-child {
+                 margin-bottom:0;
+             }
+          }
+      }
+      .input-wrapper {
+          &>label {
+              &:first-child {
+
+                  @include breakpoint(medium down) {
+                    margin-bottom:0.5rem;
+                    }
+              }
+          }
+      }
+
+      .checkbox-container {
+        color: $medium-gray-accent;
+        @include font-size(14);
+        font-weight: 500;
+        margin-bottom: 5px;
+
+        input[type='checkbox'] + input {
+            margin-left: 10px;
+        }
+
+        @include breakpoint(medium down) {
+            margin: 0 10px 5px;
+            display: inline-block;
+            margin-left: 0;
+        }
+
+        &:first-child {
+            @include breakpoint(medium down) {
+                margin-left: 0;
+            }
+        }
+      }
+
+      .select-wrapper {
+          @include breakpoint(medium down) {
+              @include flex-grid-row();
+          }
+
+          .input-wrapper {
+              @include breakpoint(medium down) {
+                  @include flex-grid-column();
+              }
+          }
+      }
+
+      .button-wrapper {
+          .button.primary {
+              margin-bottom: 1rem;
+              min-width: 100%;
+              max-width:100%;
+              padding: 0.85rem 1rem;
+
+              @include breakpoint(medium down) {
+                  @include font-size(14);
+              }
+          }
+      }
+  }
+
+  &.search-component-content-type {
+      .input-wrapper {
+          .row {
+              @include breakpoint(small only) {
+                  display: inline-block;
+              }
+          }
+      }
+
+  }
+
+  &.search-component-keywords {
+      position: relative;
+      margin-bottom: 4rem;
+      top: 0;
+      padding-bottom: .5rem;
+      z-index: 1 !important;
+
+      input {
+          .search-input {
+                height: 60px;
+                font-size: 1.6rem;
+                border-radius: 12px;
+                border: 1px solid $light-gray;
+          }
+      }
+
+      /*.global-sprite.search-icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+      }*/
+  }
+}
+
+.lt-search-content {
+    .form.multi-faceted .search-component.form {
+        border: none !important;
+    }
+
+    .content-container {
+        border: none !important
+    }
+}
+
+[type='file'], [type='checkbox'], [type='radio'] {margin: 0;}
+
+/* Error styling for select2 */
+.select2-container--default.is-invalid-input:not(.select2-container--focus) .selection .select2-selection--multiple {
+    background-color: rgba(230, 73, 56, 0.1) !important;
+    border-color: #E64938 !important;
+}
+
+.form .input-wrapper .select2-container {
+    display: block;
+    width: 100% !important;
+    margin-bottom: 1rem;
+}
+
+.profile-image-container {
+    input[type=file] {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    label {
+        cursor: pointer;
+        color: $secondary-color;
+    }
+}
+
+
+.success-message, .fail-message {
+    display:none;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+    h4 {
+        margin-bottom: 4rem;
+    }
+}
+
+.form-container {
+    position:relative;
+}
+
+.mce-tinymce{
+    margin-bottom: 1rem!important;
+}
+
+/* RTL STYLING CORRECTIONS (ARABIC) */
+html[dir="rtl"] {
+    label{
+        text-align:right;
+    }
+    .form {
+        .select {
+            padding-right: 0.5rem;
+            background-position: left -8px center;
+        }
+        small{
+            &.required{
+                float:left;
+            }
+        }
+    }
+
+    .large-text-right{
+        text-align:left;
+    }
+    .large-text-left{
+        text-align:right;
+    }
+
+    .mce-container-body{
+        text-align:right;
+    }
+}

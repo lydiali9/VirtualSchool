@@ -1,0 +1,28 @@
+$module: '.module';
+#{$module} {
+  &-completion {
+    &-container {
+      display: none;
+
+      .switch {
+        display: none;
+        margin-bottom: 3rem;
+
+        &.active {
+          display: block;
+        }
+      }
+      .button {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{{#each data}}
+  <div class="card-column">
+    <div class="featured-img" data-imagizer>
+      <img src="{{img}}" alt=""/>
+    </div>
+    <h4 class="title">{{title}}</h4>
+    <h5 class="description">{{description}}</h5>
+    <div class="lt-separator"></div>
+    <ul class="listing">Example Courses:</h5>
+      {{#each list-items}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    <a class="link-back" href="/learningPaths/{{filename}}.html">{{link-title}}</a>
+  </div>
+{{/each}}

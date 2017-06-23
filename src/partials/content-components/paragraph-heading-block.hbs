@@ -1,0 +1,11 @@
+<div class="headingBlock-paragraph row">
+  <div class="columns small-12">
+    {{#if data.img.path}}
+      <div class="featured-img" data-imagizer>
+        <img src="{{data.img.path}}" title="{{data.img.alt}}" alt="{{data.img.alt}}"/>
+      </div>
+    {{/if}}
+    <h2 class="title text-left">{{data.title}}</h2>
+    <p class="description type-body-copy text-left">{{data.description}}</p>
+  </div>
+</div>

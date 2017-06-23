@@ -1,0 +1,248 @@
+.navigation {
+  background: map-get($foundation-palette, primary);
+  width: 100%;
+  z-index: 10;
+  padding: 12px 0;
+
+  @include breakpoint(medium down) {
+    padding: 6px 0;
+  }
+
+  &-menu {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    @include flex-grid-row();
+    //@include flex-align(right, middle);
+    height: 60px;
+
+    @include breakpoint(medium down) {
+      @include flex-align(center, middle);
+    }
+
+    & a {
+      text-decoration: none;
+    }
+
+    .user-menu {
+      li {
+        color: white;
+        margin-top: .5rem;
+
+        a {
+          color: white;
+
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+  .menu-item {
+    display: flex;
+  }
+  .menu-link {
+    line-height: 60px;
+    height: 60px;
+    border-radius: 0;
+    padding: 0 0.25rem;
+
+
+    @include breakpoint(iphone) {
+      padding: 0 0.5rem;
+    }
+    @include breakpoint(340px down) {
+        padding: 0 0.1rem;
+    }
+    &.hover {
+      background-color: $white;
+    }
+
+  }
+
+  .menu-submenu-wrapper {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: $white;
+    left: 0px !important;
+    top: 0px !important;
+    margin-top: 60px;
+    border-bottom: 1px solid $medium-gray;
+
+    &.is-open {
+      display: block;
+    }
+
+    &#language-menu, &#search-menu {
+      display: initial;
+      top: 0px !important;
+      width: 100% !important;
+    }
+
+  }
+
+  #search {
+    cursor: pointer;
+    .search-field {
+      margin: 1.25rem auto;
+    }
+  }
+
+  #search-menu {
+    padding-bottom: 1rem;
+  }
+
+  @include breakpoint(large) {
+    @include ew-navigation;
+  }
+
+  &-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .sprite-close-button {
+    &.hover {
+      .global-sprite {
+        position: relative;
+        background-image: none !important;
+        &:after, &:before {
+          content: ' ';
+          position: relative;
+          width: 100%;
+          height: 2px;
+          top: 50%;
+          background-color: map-get($foundation-palette, primary);
+          display: block;
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+
+.search-overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(100, 100, 100, 0.6);
+  z-index: -1;
+}
+
+.dropdown-pane {
+  visibility: hidden;
+  &.is-open {
+    visibility: visible;
+  }
+}
+
+.mobile-menu {
+  position: absolute;
+  left: 0;
+}
+
+
+.hamburger {
+  &-button {
+    display: block;
+    width: 40px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+  &-toggle {
+    display: block;
+    position:relative;
+    width:20px;
+    height: 2px;
+    margin:0 auto;
+    background: $white;
+    transition: background 0s 0.3s;
+
+    &::before, &::after {
+      position:absolute;
+      display:block;
+      left:0;
+      width: 100%;
+      height: 2px;
+      background: $white;
+      content: '';
+      transition-duration: 0.3s, 0.3s;
+      transition-delay: 0.3s, 0s;
+    }
+    &::before {
+      top:-7px;
+      transition-property: top, transform;
+    }
+    &::after {
+      bottom:-7px;
+      transition-property: bottom, transform;
+    }
+
+    .is-off-canvas-open & {
+      background: none;
+
+      &::before, &::after {
+        transition-delay: 0s, 0.3s;
+      }
+      &::before {
+        top:0;
+        transform: rotate(45deg);
+      }
+      &::after {
+        bottom:0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+/* ACTIVE NAVIGATION CLASSES */
+@mixin activeNav($platform: 'desktop', $navchild: 1, $bg-color: $white, $text-color: $primary-color) {
+    .header.#{$platform} {
+        .navigation .menuitem:nth-child(#{$navchild}) {
+        background-color: $bg-color;
+            a {
+                color: $text-color;
+                &:after {
+                    border-color:$text-color transparent transparent;
+                }
+            }
+        }
+    }
+}
+
+body.who-we-are {
+    @include activeNav('desktop', 1)
+}
+body.community {
+    @include activeNav('desktop', 2)
+}
+body.campaigns {
+    @include activeNav('desktop', 3)
+}
+body.resources {
+    @include activeNav('desktop', 4)
+}
+body.join-the-movement {
+    @include activeNav('desktop', 5)
+}
+
+/* RTL STYLING CORRECTIONS (ARABIC) */
+html[dir="rtl"] {
+    .mobile-menu{
+        right: 0;
+        left: unset;
+    }
+}

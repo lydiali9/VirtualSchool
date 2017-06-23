@@ -1,0 +1,16 @@
+.reveal {
+  border-radius: 0px;
+
+  &.small {
+    padding: 4.5rem;
+    width: 60%;
+  }
+}
+
+.modal-header {
+  margin-bottom: 1em;
+}
+
+.close-button {
+    z-index: 99;
+}

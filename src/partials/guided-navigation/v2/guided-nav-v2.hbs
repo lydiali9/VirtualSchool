@@ -1,0 +1,21 @@
+<div class="title-headingBlock row align-middle align-center lt-margin-padding-large">
+  <h2 class='type-header-xlarge column small-12 text-center lt-margin-lower-small'>
+      {{data.title}}
+      {{#if data.subtitle}}
+          <small class='type-subtitle-small subtitle text-center'>{{data.subtitle}}</small>
+      {{/if}}
+  </h2>
+
+  {{#if data.description}}
+    <h3 class='type-header-small column large-10 medium-10 small-10 text-center lt-margin-lower-medium'>{{data.description}}</h2>
+  {{/if}}
+  <ul class="guided-navigation guided-avatar">
+    {{>guided-feed-item-v2 data=data.categories}}
+  </ul>
+
+  {{#if data.CTA.link-title}}
+    <div class="column small-12 text-center">
+        <a class="button primary" href="{{data.CTA.link}}">{{data.CTA.link-title}}</a>
+    </div>
+  {{/if}}
+</div>

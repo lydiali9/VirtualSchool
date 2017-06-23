@@ -1,0 +1,49 @@
+<div class="feed-column" data-accordion-item>
+  <div class="row">
+    <div class="feed-status">
+      <div class="avatar">{{add 1 @index}}</div>
+      <span class="vertical-line"></span>
+    </div>
+    <div class="feed-content accordion" data-accordion data-allow-all-closed="true">
+      <div class="row" data-accordion-item>
+        <a class="content-container accordion-title" data-accordion-title>
+          <div class="feed-title {{#if data.modules}}has-accordion{{/if}}">
+            <h4 class="title">{{data.title}}</h4>
+          </div>
+          {{#if data.description}}
+            <div class="content">
+              <h4 class="description-heading"></h4>
+              <h5 class="description">{{data.description}}</h5>
+            </div>
+          {{/if}}
+        </a>
+        <div class="feed-specs hide">
+          <h5 class="specs">{{data.length}} min</h5>
+        </div>
+        {{#if data.modules}}
+        <ol class="tab-content feed-content accordion-content" data-tab-content data-course-container>
+          {{#each data.modules}}
+            <a href="{{#if this.data.active}}/learningPaths/FinancialLiteracy/{{@key}}.html{{else}}#{{/if}}">
+              <div class="sub-feed">
+                <div class="feed-title">
+                  {{#if this.data.optional}}
+                    <h4 class="title"><strong>Optional Challenge: </strong>{{this.data.title}}</h4>
+                  {{else}}
+                    <h4 class="title"><strong>Module {{this.data.module-id}}: </strong>{{this.data.title}}</h4>
+                  {{/if}}
+                </div>
+                <div class="feed-specs hide">
+                  <h5 class="specs">{{this.data.length}}</h5>
+                </div>
+                <div class="feed-status" data-module-check="{{@key}}">
+                  <div class="avatar avatar-small"></div>
+                </div>
+              </div>
+            </a>
+          {{/each}}
+        </ol>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

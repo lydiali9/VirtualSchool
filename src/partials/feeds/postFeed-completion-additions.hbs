@@ -1,0 +1,54 @@
+<div class="feed-column" data-accordion-item>
+  <div class="row">
+    <div class="feed-status">
+      <div class="avatar icon-{{data.type}}">
+        {{#compare type "assessment" operator="=="}}
+          {{> Quiz}}
+        {{/compare}}
+        {{#compare type "certificate" operator="=="}}
+          {{> Star}}
+        {{/compare}}
+      </div>
+      <span class="vertical-line"></span>
+    </div>
+    <div class="feed-content accordion" data-accordion data-allow-all-closed="true">
+      <div class="row" data-accordion-item>
+        <a class="content-container accordion-title" data-accordion-title>
+          <div class="feed-title has-accordion">
+            <h4 class="title">{{data.title}}</h4>
+          </div>
+        </a>
+        <div class="feed-specs hide">
+          <h5 class="specs"></h5>
+        </div>
+        <ol class="tab-content feed-content accordion-content" data-tab-content>
+            {{#compare type "assessment" operator="=="}}
+              <a href="#">
+                <div class="sub-feed">
+                  <div class="feed-title">
+                    <h4 class="title">View My Reference Notes</h4>
+                  </div>
+                </div>
+              </a>
+              <a href="{{root}}/Assessment.html">
+                <div class="sub-feed">
+                  <div class="feed-title">
+                    <h4 class="title">Take Your Final Learning Path Assessment</h4>
+                  </div>
+                </div>
+              </a>
+            {{/compare}}
+            {{#compare type "certificate" operator="=="}}
+              <a href="{{root}}/assets/files/certificate.pdf" target="_blank">
+                <div class="sub-feed">
+                  <div class="feed-title">
+                    <h4 class="title">Download Certificate of Completion</h4>
+                  </div>
+                </div>
+              </a>
+            {{/compare}}
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

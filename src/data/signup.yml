@@ -1,0 +1,103 @@
+signup-headingBlock:
+  title: "Tell us about yourself"
+  description: ""
+  cssClass: ""
+signupOptional-headingBlock:
+  title: "Help us tailor your learning experience"
+  subtitle: "Optional"
+  description: ""
+  cssClass: ""
+signupForm:
+  -
+    title: "Name:"
+    type: "input"
+    default: "Hiba Asif"
+    disabled: true
+  -
+    title: "Email address:"
+    type: "input"
+    default: "hiba.asif123@gmail.com"
+    disabled: true
+  -
+    title: "Where do you live?"
+    type: "select"
+    placeholder: "Select a Country"
+    options:
+      - "United States of America"
+      - "China"
+      - "Hong Kong SAR"
+      - "United Kingdow"
+      - "France"
+      - "Spain"
+      - "Turkey"
+      - "United Arab Emirates"
+    disabled: true
+  -
+    title: ""
+    type: "input"
+    placeholder: "City"
+    default: "New York City"
+    status: disabled
+  -
+    title: "Sex"
+    type: "select"
+    default: "female"
+    options:
+      - "female"
+      - "male"
+      - "not specified"
+    disabled: true
+  -
+    title: "Age Range"
+    type: "select"
+    default: "18-25 years"
+    options:
+      - "18-25 years"
+      - "26-34 years"
+      - "35-39 years"
+      - "40-50 years"
+      - "60+ years"
+    disabled: true
+signupOptionalForm:
+  -
+    title: "Highest level of schooling completed:"
+    type: "select"
+    default: "some high school"
+    options:
+      - "No high school"
+      - "Some high school"
+      - "High School Diploma"
+      - "Some college"
+      - "Associates Degree"
+      - "Bachelor's Degree"
+      - "Some graduate studies"
+      - "Graduate Degree"
+      - "Postdoctorate Degree"
+  -
+    title: "Are you currently employed?"
+    type: "select"
+    default: "no"
+    options:
+      - "yes"
+      - "no"
+  -
+    title: "What are you interested in learning?"
+    type: "select"
+    placeholder: "Starting a business"
+    options:
+      - "Sit Sem Porta Venenatis"
+      - "Sit Ligula Malesuada"
+      - "Sollicitudin Nibh Ornare Purus Porta"
+      - "Dolor Pellentesque Pharetra"
+      - "Venenatis Elit Ornare Quam"
+      - "Pharetra Pellentesque Ullamcorper"
+  -
+    title: "Are you seeking employment?"
+    type: "select"
+    default: "yes"
+    options:
+      - "yes"
+      - "no"
+signupCTA:
+  link-title: "Get Started"
+  link: "/VerifyEmail.html"

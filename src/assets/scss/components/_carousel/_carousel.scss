@@ -1,0 +1,131 @@
+.carousel {
+  width:100%;
+  height:300px;
+  overflow:hidden;
+
+  @include breakpoint(medium) {
+    height: 480px;
+  }
+
+  @include breakpoint(large) {
+    height: 640px;
+  }
+  &-container {
+    width:100%;
+    position:relative;
+  }
+
+  .banner {
+    height: 300px;
+    @include breakpoint(medium) {
+        height: 480px;
+      }
+
+      @include breakpoint(large) {
+        height: 640px;
+      }
+  }
+}
+
+@import 'slick.scss';
+
+.slick {
+  &-next, &-prev {
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    color:$white;
+    padding: 1rem;
+    direction: ltr;
+
+    &:before {
+      content: "/";
+      font-size: 2.5rem;
+      top: -15px;
+      position: absolute;
+      transform: scaleX(-1) rotate(15deg);
+    }
+    &:after {
+      content: "/";
+      font-size: 2.5rem;
+      top: 15px;
+      position: absolute;
+      transform: rotate(15deg);
+      margin-left: 2px;
+    }
+
+    &:before, &:after {
+        display:none;
+        @include breakpoint(medium) {
+            display: block;
+        }
+    }
+    &:hover {
+      &:before, &:after {color: $secondary-color;}
+    }
+  }
+  &-prev {
+    z-index:2;
+    left:1rem;
+    transform: rotate(180deg);
+  }
+  &-next {
+    z-index: 3;
+    right: 1rem;
+  }
+
+  &-list {
+    z-index: 1;
+  }
+
+  &-track {
+      overflow:hidden;
+  }
+
+  &-dots {
+    position:absolute;
+    width:100%;
+    bottom: 0;
+    z-index: 2;
+    margin: .8rem 0;
+    text-align:center;
+
+    & li {
+      display: inline-block;
+
+      button {
+        width: .5rem;
+        height: .5rem;
+        margin: .4rem;
+        border-radius: 50%;
+        background-color: $pale-gray;
+        font-size: 0;
+        line-height: 0;
+        display:block;
+        cursor: pointer;
+      }
+
+      &.slick-active, &:hover {
+        button {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+/* RTL STYLING CORRECTIONS (ARABIC) */
+html[dir="rtl"] {
+    .slick {
+        &-prev {
+            right: 1rem;
+            transform: rotate(0deg);
+            margin-top: -1rem;
+        }
+        &-next {
+            left: 1rem;
+            transform: rotate(180deg);
+            right: initial;
+        }
+    }
+}

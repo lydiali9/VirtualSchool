@@ -1,0 +1,16 @@
+<div class="title-headingBlock {{data.cssClass}} {{cssClass}} row small-collapse align-middle align-center">
+    <h2 class='type-header-xlarge column small-12 text-center'>
+        {{data.title}}
+            {{#if data.subtitle}}
+                <small class='type-subtitle-small subtitle text-center primary-color lt-margin-lower-small'>{{data.subtitle}}</small>
+            {{/if}}
+    </h2>
+    {{#if data.description}}
+      <h3 class='type-subtitle-xlarge description'>{{data.description}}</h2>
+    {{/if}}
+    {{#if data.CTA.link-title}}
+      <div class="column small-12 text-center">
+              <a class="button primary" href="{{link}}">{{data.CTA.link-title}}</a>
+      </div>
+    {{/if}}
+</div>

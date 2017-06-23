@@ -1,0 +1,13 @@
+<section class="header-top column">
+    <ul class="list-pipe menu-language">
+      {{#each site-settings.languages}}
+        <li><a href="{{iso}}" class="lang header-link" data-language={{iso}}>{{title}}</a></li>
+      {{/each}}
+    </ul>
+    <ul class="list-pipe user-menu loggedOut" data-dropdown-menu>
+      {{>demo-userNotLoggedIn}}
+    </ul>
+    <ul class="list-pipe user-menu loggedIn hide" data-dropdown-menu>
+      {{>demo-userLoggedIn}}
+    </ul>
+</section>

@@ -1,0 +1,178 @@
+.banner {
+	width:100%;
+    position:relative;
+
+	&-image {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,.3);
+		position:absolute;
+        background-size: cover;
+        background-position: 50%;
+
+        /*&.fit-height {
+            img {
+                width: auto;
+                height: 100%;
+                max-width: none;
+            }
+        }
+
+        img {
+			position: absolute;
+			width:100%;
+			height: auto;
+		}*/
+	}
+
+	&-container {
+		@include flex-grid-row();
+		@include flex-align(left, middle);
+		position: relative;
+		width:100%;
+		height: 100%;
+		max-width: none;
+
+		&.has-copy {
+			//@include linear-gradient(to left, transparent 0%, rgba(0,0,0,.55) 10%, rgba(0,0,0,.55) 35%, transparent 60%, transparent 100%);
+			justify-content: flex-end;
+
+			.banner-content {
+				max-width: 40%;
+				margin: 0 4rem 0;
+			}
+		}
+	}
+
+	&-content {
+		@include flex-grid-column(shrink);
+		text-align: right;
+		padding: 1rem !important;
+
+		p {
+			margin: 0;
+			font-size: 1rem;
+		}
+
+		.banner-header {
+			color: $white;
+
+			@include breakpoint(medium down) {
+				font-size: 1.2rem;
+			}
+		}
+
+		.button {
+			margin-top: 2rem;
+			@include breakpoint(medium down) {
+				margin-top: 1rem;
+			}
+		}
+	}
+}
+
+
+.orbit-container {
+    @include breakpoint(medium down) {
+        height: auto !important;
+    }
+}
+
+.orbit-slide {
+    max-height: 100% !important;
+}
+
+.bg-image {
+	width: 100%;
+	background-color: rgba(0,0,0,.3);
+	display: table;
+	background-size: cover;
+	background-position: center;
+    height: 640px;
+    position:relative;
+
+    .img-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index:-100;
+
+        .img-panel {
+            height: 100%;
+            width: 100%;
+
+            &.fit-height {
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+
+            &.fit-width {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        img {
+            min-width: 100%;
+            //min-height: 100%;
+            max-width: none;
+        }
+
+
+
+
+    }
+
+    @include breakpoint(medium only) {
+        height: 480px;
+    }
+
+    @include breakpoint(small only) {
+        height: 300px;
+    }
+}
+
+.item-container {
+	display: table-cell;
+	vertical-align: middle;
+	width:100%;
+	text-align: center;
+	color: white;
+
+    .banner-content {
+        max-width: 80%;
+        margin: 0 auto;
+
+        p {
+            margin: 0;
+        }
+
+        h3 {
+            color: white;
+
+            @include breakpoint(medium down) {
+                font-size: 1.2rem;
+            }
+        }
+
+        .button {
+            margin-top: 2rem;
+
+            @include breakpoint(medium down) {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+
+}
+
+.orbit-previous, .orbit-next {
+    @include breakpoint(small only) {
+        display: none;
+    }
+}

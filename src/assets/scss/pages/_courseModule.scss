@@ -1,0 +1,21 @@
+.coursemodule{
+	&-image{
+		&.title-headingBlock.headingBlock-img .featured-img.half{
+			max-height: unset!important
+		}
+	}
+}
+
+.form-container.quiz{
+	p{
+		margin-top: 2rem;
+		text-align: left;
+		margin-left: 2rem;
+	}
+	ul{
+		text-align: left;
+		margin-left: 3rem;
+		margin-top: 2rem;
+		list-style-type: square;
+	}
+}

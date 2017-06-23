@@ -1,0 +1,32 @@
+<div class="row align-center">
+<div class="container columns large-10 medium-10 small-12 text-left lt-section-padding-medium">
+      <div class="row">
+        {{#each data}}
+        <div class="columns large-4 medium-4 small-12 lt-section-padding-small">
+          <div class="row">
+            <div class="img-avatar columns shrink">
+              <div class="img-round lt-primary-bg-color">
+                <span class="type-subtitle-xlarge type-semibold">{{inc @index}}</span>
+              </div>
+            </div>
+            <div class="content columns align-stretch medium-expand small-expand">
+              <div class="row">
+                {{#if title}}
+                  <h3 class="columns type-header-small small-12 medium-12 large-12 title">{{title}}</h3>
+                {{/if}}
+
+                {{#if description}}
+                  <p class="columns small-12 medium-12 large-12 type-subtitle-large faded-purple">
+                    {{description}}
+                  </p>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+
+
+      </div>
+    </div>
+</div>

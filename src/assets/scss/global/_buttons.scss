@@ -1,0 +1,282 @@
+.close-button {
+    font-size: 4.5rem;
+}
+.button {
+  margin: 0 0 1rem;
+  transition: all 0.15s ease-out;
+
+  &-text {
+      margin: 0;
+      padding:0;
+      background: none;
+      border: none;
+      color: $secondary-color;
+      font: {
+        family: $alternate-font;
+        weight: 700;
+      }
+
+      .zh & {
+            font-family: $special-alternate-font;
+        }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: transparent;
+        border-color: transparent;
+        color: $primary-color;
+    }
+  }
+
+  &[disabled] {
+      opacity: 0.5;
+  }
+
+  &.primary {
+    background-color: $secondary-color;
+    color: $white;
+    @include font-size(map-get(map-get($header-sizes, medium), h4));
+    font: {
+      family: $alternate-font;
+      weight: 700;
+    }
+    width: auto;
+    min-width: 11.25rem;
+    margin: 0;
+
+    .zh & {
+        font-family: $special-alternate-font;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: lighten($secondary-color, 35);
+      border-color: darken($secondary-color, 20);
+      color: $secondary-color;
+    }
+
+    &:before {
+        background-color: $secondary-color;
+        transition: all 0.15s ease-out;
+    }
+
+    &.share-button {
+        position: relative;
+        min-width: 220px;
+        max-width: 400px;
+        word-wrap: break-word;
+        word-break: break-word;
+
+         &.active {
+             .share-links {
+                 width: 100%;
+             }
+        }
+        .share-links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            border-radius: 6px;
+            transition: .25s;
+            background: lighten($secondary-color, 35);
+            border-color: darken($secondary-color, 50);
+
+            &-inner-wrapper {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                width: 220px;
+            }
+
+            &-inner {
+                display: table-cell;
+                vertical-align: middle;
+                margin: 0;
+                position: relative;
+                height: 40px;
+                width: 180px;
+
+                a {
+                    @include flex-grid-column(3,0);
+
+                    img {
+                        height: 20px;
+                        margin: 0 7px;
+                    }
+                    &:hover {
+                        img {
+                            filter: brightness(100);
+                            -webkit-filter: brightness(100);
+                            -moz-filter: brightness(100);
+                        }
+                    }
+                 }
+            }
+            span.close {
+                width: 64px;
+                height: 51px;
+                display: table-cell;
+                background: $secondary-color;
+
+                span {
+                    height: 2px;
+                    background: $white;
+                    width: 20px;
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    margin: -1px 18px 0;
+                    transform: rotate(45deg);
+
+                    &:last-child {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  &-icon {
+    fill: $white;
+    background: map-get($foundation-palette, secondary);
+    padding: 0.5rem;
+
+    svg {
+      display: block;
+    }
+  }
+
+  .loader {
+    display: none;
+    position: relative;
+    top: -4px;
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+    @include font-size(map-get(map-get($header-sizes, medium), h4));
+    font: {
+      family: $alternate-font;
+      weight: 700;
+    }
+    height: 3.25rem;
+    width: auto;
+    padding: auto 2rem;
+
+    .zh & {
+        font-family: $special-alternate-font;
+    }
+
+    &.bg-white {
+        color: $medium-gray-accent;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $white;
+      border-color: $white;
+      color: $primary-color;
+    }
+
+  }
+
+  &.tertiary {
+    background-color: $light-gray;
+    border-color: $white;
+    color: $white;
+    @include font-size(map-get(map-get($header-sizes, medium), h4));
+    font: {
+      family: $alternate-font;
+      weight: 700;
+    }
+    height: 3.25rem;
+    width: auto;
+    padding: auto 2rem;
+
+    .zh & {
+        font-family: $special-alternate-font;
+    }
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: lighten($light-gray, 35);
+      border-color: darken($light-gray, 20);
+      color: $light-gray;
+    }
+
+    &:before {
+        background-color: $light-gray;
+        transition: all 0.15s ease-out;
+    }
+
+  }
+}
+
+.pagination { // USED WITH VIEWS - RENDERINGS - SHARED - PAGER.CSHTML
+    &:before, &:after {
+        display:none;
+    }
+    & > ul {
+        @include grid-row();
+        text-align: right;
+        font-size: 0;
+
+        li {
+            /*@include border-radius(4px);*/
+            border-radius: 0;
+            margin:0;
+            border-right: 2px solid $primary-color;
+
+            &.noborder{
+                border-right: none;
+            }
+            a {
+                background-color: transparent;
+                color: $primary-color;
+                padding-top:0;
+                padding-bottom: 0;
+                /*@include border-radius(4px);*/
+                &.active {
+                    color: $secondary-red;
+                }
+                &:hover{
+                    background: transparent;
+                    color: $secondary-red;
+                }
+                &.ellipse{
+                    padding: 0;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+                border-right: none;
+            }
+        }
+   }
+}
+
+
+/* RTL STYLING CORRECTIONS (ARABIC) */
+html[dir="rtl"] {
+    .pagination > ul{
+        text-align: left;
+    }
+    .button.secondary{
+        float:right;
+    }
+}

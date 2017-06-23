@@ -1,23 +1,123 @@
-# You've added your first Readme file!
-A README.md file is intended to quickly orient readers to what your project can do.  New to Markdown? [Learn more](https://go.microsoft.com/fwlink/p/?LinkId=524306&amp;clcid=0x409)
-## Edit this README and commit your change to a topic branch
-In Git, branches are cheap.  You should use them whenever you're making changes to your repository.  Edit this file by clicking on the edit icon.
-Then make some changes to this README file.
-&gt; Make some **edits** to _this_ blockquote
-When you are done, click the dropdown arrow next to the save button - that will allow you to commit your changes to a new branch.
-## Create a pull request to contribute your changes back into master
-Pull requests are the way to move changes from a topic branch back into the master branch.
-Click on the **Pull Requests** page in the **CODE** hub, then click "New Pull Request" to create a new pull request from your topic branch to the master branch.
-When you are done adding details, click "Create Pull request". Once a pull request is sent, reviewers can see your changes, recommend modifications, or even push follow-up commits.
-First time creating a pull request?  [Learn more](https://go.microsoft.com/fwlink/?LinkId=533211&amp;clcid=0x409)
-### Congratulations! You've completed the grand tour of the CODE hub!
-# Next steps
-If you haven't already done so, [install Git](https://git-scm.com/downloads) (as well as [Git Credential Manager](https://java.visualstudio.com/Downloads/gitcredentialmanager/Index) for Linux or Mac OS)
-Choose and install one of these supported IDEs:
-* [Visual Studio](https://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409)
-* [Android Studio](https://developer.android.com/studio) (with [Team Services Plugin](https://java.visualstudio.com/Downloads/intellijplugin/Index))
-* [Eclipse](https://www.eclipse.org/downloads) (with [Team Explorer Everywhere](https://java.visualstudio.com/Downloads/eclipseplugin/Index))
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/download) (with [Team Services Plugin](https://java.visualstudio.com/Downloads/intellijplugin/Index))
-* [Visual Studio Code](https://code.visualstudio.com/Download) (with [Team Services Extension](https://java.visualstudio.com/Downloads/visualstudiocode/Index))
-Then clone this repo to your local machine to get started with your own project.
-Happy coding!
+Welcome to UNWomen • Virtual School Prototype!
+==============================================
+
+This prototype is being developed as a joint collaboration between
+Pricewaterhouse Coopers and UNWomen as a means to deploy a scalable solution to
+access learning solutions and materials throughout the globe - empowering men,
+women, and children everywhere to enhance their own individual futures and the
+future of society as a whole.
+
+More details on this endeavor to come...
+
+ 
+
+Getting Started
+---------------
+
+1.  After cloning the repository - you will need to install the node
+    dev-dependency modules. Do this by navigating to the root of the repo:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ git clone https://unw-redesign.visualstudio.com/DefaultCollection/Redesign/_git/Virtual%20School
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.  Checkout the dev branch, currently used for active development
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ git checkout dev
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.  Install Modules. Module installation is compatible with npm however we recommend utilizing YARN instead.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ nn
+$ yarn
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OR (if you prefer old-fashioned)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ npm install
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.  Finally, run npm start to run Gulp. Your finished site will be created in a
+    folder called `dist`, viewable at this URL:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+http://localhost:3000
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_ To create compressed, production-ready assets run `npm run build --production` _
+
+* * *
+
+## Structure ##
+
+### **Base File Structure** ###
+is located in the `src` folder and is comprised of five essential folder hierarchies:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/assets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_ Includes images, javascript, and sass files for compilation _
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_ YML files that comprise the "models" of the static site; Handlebars compiles HTML using these data files _
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/helpers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_ Additional JS files to enhance pre-existing Handlebars and Panini helpers _
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/layouts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_ Default Layout for all HTML pages _
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_ Comprises each individual HTML page, typically composed of partials _
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/partials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_ (Modules) that can be re-used for functionality/UI layout _
+
+### **Development Dependencies** ###
+<p>Similarly to EmpowerWomen.org, UNW Virtual School is developed primarily using Foundation 6.2.3 by Zurb as its primary front-end framework. For further information, visit: **[Foundation for Sites](http://foundation.zurb.com/sites/docs)**.</p>
+
+<p>Most customized and/or repeated demo elements are built out using panini and handlebars. The data for these items are located in YAML files. This demonstration information can be changed or modified at your discretion. The primary YAML files are:</p>
+
+* **site-settings.yml** - Header/Navigation/Footer component content
+* **data.yml** - Still in progress
+
+### **SASS Style Structure** ###
+_ To be completed soon _
+
+#### Notes ####
+
+** Files ported from EW Stylings **
+
+<ol>
+1. _layout.scss
+2. _lists.scss
+3. _social.scss
+4. _typography.scss
+</ol>
+
+<ol>
+1. _header.scss
+2. _navigation-desktop.scss
+3. _navigation.scss
+4. _footer.scss
+</ol>
+
+** Files ported as partials ** _ (modified to accept Handlebars notation) _
+
+<ol>
+1. Header
+2. Footer
+</ol>
+
+_ Global Sprite was modified for VS, along with several components; attempted to notate as much as possible _

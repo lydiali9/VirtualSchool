@@ -1,0 +1,15 @@
+<div class='input-wrapper'>
+    <label class="text-left">
+        <span class="input-label">{{title}}
+          {{#if required}}
+            <small class='required'>Required</small>
+          {{/if}}
+        </span>
+        <input type='text'
+               name="{{title}}"
+               class="input" {{#if disabled}}disabled{{/if}} {{#if required}}required{{/if}} {{#if pattern}}pattern="{{pattern}}"{{/if}} {{#if readonly}}readonly="true"{{/if}}
+               value="{{default}}"
+               placeholder="{{placeholder}}"/>
+        <small class='form-error'>{{errorMsg}}</small>
+    </label>
+</div>
