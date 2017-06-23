@@ -11,7 +11,7 @@
     &-item {
       display: flex;
       @include flex-grid-column(shrink, 0);
-      @include flex-grid-column-align(middle);
+      @include flex-align-self(middle);
       border-right: 1px solid map-get($foundation-palette, primary);
       padding-left: 0;
       padding-right: 0;
@@ -107,7 +107,7 @@
 
     &-item {
       @include flex-grid-column(null, 15px);
-      @include flex-grid-column-align(top);
+      @include flex-align-self(top);
       display: flex;
       text-align: center;
 

@@ -23,6 +23,7 @@ EntrepreneurshipBasics:
       -
         title: "Introduction to small business ownership"
         length: 60
+        type: "course"
         modules:
           -
             title: "Most Powerful Women Entrepreneurs"

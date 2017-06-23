@@ -6,7 +6,7 @@
 
   &-logo {
     @include flex-grid-column(null, 0);
-    @include flex-grid-column-align(middle);
+    @include flex-align-self(middle);
     display: flex;
     position: absolute;
     width: 182px;
@@ -50,7 +50,7 @@
     margin-bottom: 0;
     list-style-type: none;
     @include flex-grid-row(collapse);
-    @include flex-grid-row-align(right, middle);
+    @include flex-align(right, middle);
 
     & a {
       text-decoration: none;
@@ -66,7 +66,7 @@
     padding: 0 0.25rem;
 
 
-    @include breakpoint(iphone6) {
+    @include breakpoint(phablet) {
       padding: 0 0.5rem;
     }
     @include breakpoint(340px down) {

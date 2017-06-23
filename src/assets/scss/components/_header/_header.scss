@@ -7,7 +7,7 @@
     display:none;
     @include breakpoint(large) {
       @include flex-grid-row();
-      @include flex-grid-row-align(right);
+      @include flex-align(right);
     }
   }
 
@@ -18,6 +18,7 @@
   @include breakpoint(medium down) {
       position: fixed;
       top: 0;
+      display: none;
   }
 
   &-link {

@@ -17,14 +17,10 @@ var gulpif = require('gulp-if');
 var addsrc = require("gulp-add-src");
 var uncss = require('gulp-uncss');
 
-var typescript = require('gulp-typescript');
-var sourcemaps = require('gulp-sourcemaps');
-var tscConfig = require('./tsconfig.json');
-
-// var browserify = require('browserify');
-// var source = require('vinyl-source-stream');
-// var gutil = require('gulp-util');
-// var babelify = require('babelify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var gutil = require('gulp-util');
+var babelify = require('babelify');
 
 
 var isVerbose = process.argv.some(function (arg) {
@@ -55,7 +51,7 @@ var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
 var PATHS = {
   assets: [
     'src/assets/**/*',
-    '!src/assets/{!img,js,scss,typescript}/**/*'
+    '!src/assets/{!img,js,scss}/**/*'
   ],
   sass : [
     'node_modules/foundation-sites/scss',
@@ -76,16 +72,6 @@ var PATHS = {
   ],
   react: {
     js: ['./src/app/js/*.{js,jsx}', './src/app/js/**/*.{js,jsx}'],
-  },
-  angular2: {
-    js: [
-      'node_modules/es6-shim/es6-shim.min.js',
-      'node_modules/systemjs/dist/system-polyfills.js',
-      'node_modules/angular2/bundles/angular2-polyfills.js',
-      'node_modules/systemjs/dist/system.src.js',
-      'node_modules/rxjs/bundles/Rx.js',
-      'node_modules/angular2/bundles/angular2.dev.js',
-    ]
   },
   images: [
     'src/assets/img/**/*'
@@ -158,7 +144,7 @@ gulp.task('reset', ['pages-rebuild'], function(){
 
 // Wrap Gulp Refreshing/Resetting Watch functions into one queue
 gulp.task('pages:reset', function(){
-  sequence(['refresh', 'pages-rebuild', 'reset']);
+  sequence('grunt-build', ['refresh', 'pages-rebuild', 'reset']);
 });
 
 // Compile Sass into CSS
@@ -203,26 +189,10 @@ gulp.task('javascript', function() {
 // Compile REACT.js Web-Application components
 gulp.task('react', function(){
   if(isProduction) {
-    bundleApp(true);
+    bundleApp(true)
   } else {
-    bundleApp(false);
+    bundleApp(false)
   }
-});
-
-gulp.task('angular2', function(){
-  return gulp.src(PATHS.angular2.js)
-    .pipe(gulp.dest(PATHS.output + '/assets/js/lib/angular2'));
-});
-
-gulp.task('typescript', function () {
-  return gulp
-    .src('./src/assets/typescript/**/*.ts')
-      .pipe($.sourcemaps.init())
-      .pipe(typescript(tscConfig.compilerOptions))
-      //.pipe($.concat('index.js'))
-      .pipe($.sourcemaps.write('.'))
-      .pipe(gulp.dest(PATHS.output + '/assets/js/app'))
-      .pipe(browser.stream());
 });
 
 // Copy images to the "dist" folder
@@ -241,24 +211,23 @@ gulp.task('images', function() {
 // FINAL GULP TASKS - ROUTED INTO npm
 // Build the "dist" folder by running all of the above tasks
 gulp.task('build', function(done) {
-  sequence('clean', ['pages', 'sass', 'angular2', 'javascript', 'typescript', 'images', 'copy'], done);
+  sequence('clean', 'grunt-build', ['pages', 'sass', 'react', 'javascript', 'images', 'copy'], done);
 });
 
 gulp.task('development', function(done) {
-  sequence('clean', ['pages', 'sass', 'angular2', 'javascript', 'typescript', 'images', 'copy'], 'watch');
+  sequence('clean', 'grunt-build', ['pages', 'sass', 'react', 'javascript', 'images', 'copy'], 'watch');
 });
 
 // Build the site, run the server, and watch for file changes
 gulp.task('watch', function() {
   gulp.watch(PATHS.assets, ['copy', browser.reload]);
-  gulp.watch(['./src/pages/**/*.html'], ['pages', browser.reload]);
-  gulp.watch(['./src/{layouts,partials}/**/*.{html,hbs,handlebars}'], ['pages:reset', browser.reload]);
+  gulp.watch(['./src/pages/**/*.html'], ['grunt-build', 'pages', browser.reload]);
+  gulp.watch(['./src/{layouts,partials}/**/*.{html,hbs,handlebars}'], ['grunt-build', 'pages:reset', browser.reload]);
   gulp.watch(['./src/assets/scss/**/*.scss'], ['sass', browser.reload]);
   gulp.watch(['./src/partials/**/*.scss'], ['sass', browser.reload]);
   gulp.watch(['./src/app/scss/**/*.scss'], ['sass', browser.reload]);
   gulp.watch(['./src/assets/js/**/*.js'], ['javascript', browser.reload]);
-	gulp.watch(['./src/app/js/**/*.js'], ['react', browser.reload]);
-  gulp.watch(['./src/assets/typescript/**/*.ts'], ['typescript', browser.reload]);
+	gulp.watch(['./src/app/js/**/*.js'], ['react']);
   gulp.watch(['./src/assets/img/**/*'], ['images', browser.reload]);
 });
 
@@ -273,11 +242,11 @@ gulp.task('server', ['build'], function() {
 // Build the site, run the server, and watch for file changes
 gulp.task('default', function(done) {
   sequence(['build', 'server'], 'watch');
-});
+})
 
 gulp.task('grunt-build', function() {
   sequence('grunt-clean', 'grunt-assemble');
-});
+})
 
 // Private Functions
 // ----------------------------------------------------------------------------
@@ -288,7 +257,7 @@ function bundleApp(isProduction) {
 	var appBundler = browserify({
     	entries: './src/app/js/index.js',
     	debug: true
-  	});
+  	})
 
 	// If it's not for production, a separate vendors.js file will be created
 	// the first time gulp is run so that we don't have to rebundle things like
@@ -310,7 +279,7 @@ function bundleApp(isProduction) {
 		// development environments.
   		dependencies.forEach(function(dep){
   			appBundler.external(dep);
-  		});
+  		})
   	}
 
   	appBundler
