@@ -1,0 +1,132 @@
+$module: '.social';
+#{$module} {
+	&.badge {
+    /* Badge Height, Width, and Background Size have been modified from original EW specs */
+		width: 40px;
+		height: 40px;
+		margin: 0 4px;
+		color: #fff;
+		background-color: transparent;
+		background-image: inherit;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+    /* Modified for VS for new Global Sprite */
+		&.twitter {
+				background-position: 0px -246px;
+		}
+		&.facebook {
+				background-position: -40px -246px;
+		}
+		&.gplus {
+			background-position: -80px -246px;
+		}
+		&.instagram {
+			background-position: -120px -246px;
+		}
+		&.linkedin {
+			background-position: -160px -246px;
+		}
+		&.pinterest {
+			background-position: -200px -246px;
+		}
+	}
+
+    &-wall.badge {
+        height: 24px;
+        @include border-radius(0);
+
+        &.facebook {
+            width: 24px;
+            height: 24px;
+            background-position: -564px -116px;
+        }
+        &.twitter {
+            width: 29px;
+            background-position: -597px -116px;
+        }
+        &.gplus {
+            width: 24px;
+            height: 25px;
+            background-position: -633px -116px;
+        }
+        &.instagram {
+            width: 25px;
+            height: 25px;
+            background-position: -534px -116px;
+        }
+        &.linkedin {
+            width: 28px;
+            height: 25px;
+            background-position: -664px -116px;
+        }
+        &.pinterest {
+            width: 24px;
+        }
+    }
+}
+
+.share-badges {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    .title-rendering & {
+        margin-top:0;
+        margin-bottom:0;
+    }
+
+    .social.badge {
+        background: $secondary-color;
+        background-size: 24px;
+        background-repeat: no-repeat;
+
+        a {
+            display: block;
+            height:100%;
+        }
+
+        &.facebook {
+            background-image: url(../img/icons/share-button/facebook-white.png);
+            background-position: 8px 8px;
+        }
+        &.twitter {
+            background-image: url(../img/icons/share-button/twitter-white.png);
+            background-position: 9px 12px;
+        }
+        &.email {
+            background-image: url(../img/icons/share-button/email-white.png);
+            background-position: 8px 13px;
+        }
+
+        &:hover {
+            background: lighten($secondary-color, 35);
+            background-size: 24px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+        }
+
+            &.facebook:hover {
+                background-image: url(../img/icons/share-button/facebook.png);
+                background-position: 8px 8px;
+            }
+            &.twitter:hover {
+                background-image: url(../img/icons/share-button/twitter.png);
+                background-position: 9px 12px;
+            }
+            &.email:hover {
+                background-image: url(../img/icons/share-button/email.png);
+                background-position: 8px 13px;
+            }
+    }
+}
+
+
+.view-profile .share-badges {
+    display:none;
+}

@@ -1,0 +1,156 @@
+FiveReasonswhyyouShouldhaveaFinancialPlan:
+  data:
+    id: 1
+    title: "Five Reasons why you Should have a Financial Plan"
+    path: "FiveReasonswhyyouShouldhaveaFinancialPlan"
+    type: "Video"
+    length: 15
+    featured-media: "YOUTUBE IFRAME"
+    iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+    knowledge-checkpoint:
+      -
+        title: "Which of the above reasons are most important for you to do a financial plan?"
+        type: "textarea"
+        disabled: false
+        value: ""
+        placeholder: "Enter your response here to complete this module."
+    notes:
+      -
+        title: "To help you remember key points from this module, you can add notes here."
+        type: "textarea"
+        disabled: false
+        data: >
+          Reasons why you Should have a Financial Plan
+            - Helps you save money to invest for future growth
+            - Be ready for important life milestones (Uni/Marriage/House)
+            - Budgeting helps you manage changes (Bad Years/Loss of Jobs/Economic Slumps)
+            - Financial Planning allows you to control your expenses better
+            - Reducing your stress and giving you peace of mind
+        placeholder: "Notes"
+        cssClass: "notes"
+    moduleCTA:
+      link-title: "Complete Module"
+FourCommonSourcesofIncomeinahousehold:
+  data:
+    id: 2
+    title: "Four Common Sources of Income in a household"
+    path: "FourCommonSourcesofIncomeinahousehold"
+    type: "Video"
+    length: 15
+    featured-media: "YOUTUBE IFRAME"
+    iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+    knowledge-checkpoint:
+      -
+        title: "On average, what are the monthly incomes that you are making from each of the above areas?"
+        type: "textarea"
+        disabled: false
+        value: ""
+        placeholder: "Enter your response here to complete this module."
+    notes:
+      -
+        title: "To help you remember key points from this module, you can add notes here."
+        type: "textarea"
+        disabled: false
+        data: >
+          Common Sources of Income in a household
+            - Salaries
+            - Sales of products or services (Handmade products or Vocational Services)
+            - Profits from investments
+            - Gifts or Remittances
+        placeholder: "Notes"
+        cssClass: "notes"
+    moduleCTA:
+      link-title: "Complete Module"
+SixCommonCategoriesforExpensesinahousehold:
+  data:
+    id: 3
+    title: "Six Common Categories for Expenses in a household"
+    path: "SixCommonCategoriesforExpensesinahousehold"
+    type: "Video"
+    length: 15
+    featured-media: "YOUTUBE IFRAME"
+    iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+    knowledge-checkpoint:
+      -
+        title: "What is the percentage of spending you put on a monthly basis on each of the above areas?"
+        type: "textarea"
+        disabled: false
+        value: ""
+        placeholder: "Enter your response here to complete this module."
+    notes:
+      -
+        title: "To help you remember key points from this module, you can add notes here."
+        type: "textarea"
+        disabled: false
+        data: >
+          Common Categories for Expenses in a household
+            - Housing - mortgages/rent
+            - Transport - car payments/rent/public transport
+            - Savings
+            - Essential Living  Expenses - Groceries/Education
+            - Debt Payments - loans/cards
+            - Non-Essential Living Expenses - Vacations/Clothes/Entertainment
+        placeholder: "Notes"
+        cssClass: "notes"
+    moduleCTA:
+      link-title: "Complete Module"
+Creatingyouryearlybudget:
+  data:
+    id: 4
+    title: "Creating your yearly budget"
+    path: "Creatingyouryearlybudget"
+    type: "Video"
+    length: 15
+    featured-media: "YOUTUBE IFRAME"
+    iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+    knowledge-checkpoint:
+      -
+        title: "What is your financial goal for the year?"
+        type: "textarea"
+        disabled: false
+        value: ""
+        placeholder: "Enter your response here to complete this module."
+    moduleCTA:
+      link-title: "Complete Module"
+FiveWaystobettermanageyourExpenses:
+  data:
+    id: 5
+    title: "Five Ways to better manage your Expenses"
+    path: "FiveWaystobettermanageyourExpenses"
+    type: "Video"
+    length: 15
+    featured-media: "YOUTUBE IFRAME"
+    iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+    knowledge-checkpoint:
+      -
+        title: "What are the areas that you can save on in your household?"
+        type: "textarea"
+        disabled: false
+        value: ""
+        placeholder: "Enter your response here to complete this module."
+    moduleCTA:
+      link-title: "Complete Module"
+FourEssentialFormalFinancialServicesthatyouShouldKnowAbout:
+  data:
+    id: 6
+    title: "Four Essential Formal Financial Services that you Should Know About"
+    path: "FourEssentialFormalFinancialServicesthatyouShouldKnowAbout"
+    type: "Video"
+    length: 15
+    featured-media: "YOUTUBE IFRAME"
+    iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+    knowledge-checkpoint:
+      -
+        title: "Which of the above services do you want to learn more about? (Multiple Choice)"
+        type: "textarea"
+        disabled: false
+        value: ""
+        placeholder: "Enter your response here to complete this module."
+    moduleCTA:
+      link-title: "Complete Module"
+EndOfCourseAssessment:
+  data:
+    title: "End of Course Assessment"
+    path: ""
+    type: "Quiz"
+    length: 15

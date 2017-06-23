@@ -1,0 +1,81 @@
+data:
+  title: "Financial Literacy"
+  author: "Pricewaterhouse Coopers"
+  likeCount: 60
+  tags:
+    - Finance
+    - Business Development
+    - Entrepreneurship
+  img: "assets/img/learningPaths/path_FinancialLiteracy.jpg"
+  short-description: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+  description: "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo."
+  link: ""
+  link-title: "Explore Learning Path"
+  list-items:
+    - "Ornare Mattis Bibendum"
+    - "Justo Elit Cras"
+    - "Tortor Euismod Vestibulum Justo"
+    - "Consectetur Ipsum Pharetra Etiam Malesuada"
+    - "Elit Ipsum Egestas"
+  active: true
+  courses:
+    -
+      title: "Introduction to small business ownership"
+      description: "Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      length: 60
+      modules:
+        -
+          title: "Most Powerful Women Entrepreneurs"
+          type: "video"
+          length: 15
+          featured-media: "YOUTUBE IFRAME"
+          content: ""
+        -
+          title: "Basics of small business ownership"
+          type: "default"
+          length: 10
+        -
+          title: "Developing a vision"
+          type: "game"
+          length: 10
+        -
+          title: "Investment Overview"
+          type: "default"
+          length: 15
+        -
+          title: "Organization and Delegation"
+          type: "article"
+          length: 10
+        -
+          title: "End of Course Assessment"
+          type: "assessment"
+    -
+      title: "Organizational Leadership and Change"
+      length: 60
+    -
+      title: "How to Develop 'Breakthrough' Products and Services"
+      length: 60
+    -
+      title: "Early Stage Capital"
+      length: 30
+    -
+      title: "Entrepreneurial Finance"
+      length: 30
+    -
+      title: "Product Design and Development"
+      length: 60
+    -
+      title: "Listening to the Customer"
+      length: 60
+    -
+      title: "Entrepreneurial Marketing"
+      length: 30
+    -
+      title: "Technology Strategy"
+      length: 30
+    -
+      title: "Nuts and Bolts of Business Plans"
+      length: 60
+    -
+      title: "The Art and Science of Negotiation"
+      length: 60

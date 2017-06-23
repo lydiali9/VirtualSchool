@@ -1,0 +1,59 @@
+<section class="lt-main-content text-left">
+  <div class="row lt-wrapper lt-alternate-bg-color collapse lt-main-content">
+      <div class="columns small-12">
+          <div class="row collapse align-stretch lt-row-spacer lt-margin-collapse profile-row" data-equalizer="member">
+              <div class="column large-4 medium-6 small-12 member-flex-column">
+                  <div class="profile-block profile-overview lt-bg-white" data-equalizer-watch="member">
+                      {{> memberCard cardType="member-profile"}}
+                  </div>
+              </div>
+              <div class="column large-8 medium-6 small-12 member-flex-column">
+                <div class="lt-bg-white profile-content profile-shadow-bottom">
+                  <div class="profile-block profile-content lt-bg-white">
+                      <ul class="EW-sprite attributes-block">
+                          <h3 class="title type-header-small">About</h3>
+                          <li class="gender">Female</li>
+                          <li class="joined list-inline-items">
+                              <span>Joined:</span>
+                              <time pubdate datetime="" title="">
+                                  <span class="date lt-inline">30 April 2015</span>
+                              </time>
+                          </li>
+                          <li class="locale">
+                              <span>Lives In:</span> New York <br />
+                              <span>Country:</span> United States
+                          </li>
+                          <li class="occupation">
+                              <h5 class="title">Pricewaterhouse Coopers</h5>
+                              <h5 class="description">Private Sector</h5>
+                          </li>
+                          <li class="expertise hide">
+                              @string.Join(", ", topics)
+                          </li>
+                      </ul>
+                      <div class="hide">@Html.Partial("~/Views/Renderings/EmpowerWomen/Modules/ContentModules/SocialComponents/Gamification/BadgeBlock.cshtml", UserHelper.GetBadges(Model.Id, Model.CreatedDate, Model.IsActiveBadge))</div>
+                  </div>
+              </div>
+          </div>
+          <div class="row collapse profile-row lt-row-spacer lt-margin-collapse">
+              <div class="column small-12">
+                  <div class="profile-block user-bio lt-bg-white">
+                      <h4 class="type-header-small">Bio</h4>
+                              <blockquote>
+                                  Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                              </blockquote>
+                      <p>Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="row collapse profile-row lt-margin-collapse">
+              <div class="column small-12">
+                  <div class="profile-block user-feed lt-bg-white">
+                      <h4 class="type-header-small lt-margin-lower-small">Recent Activity</h4>
+                      {{> activityFeed}}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

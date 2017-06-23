@@ -1,0 +1,19 @@
+[data-accordion-group] {
+
+  [data-accordion-item] {
+    [data-accordion-title] {
+
+    }
+
+    [data-accordion-content] {
+      display: none;
+    }
+  }
+
+}
+
+.accordion {
+  &-title {
+    padding: 0.5rem 0;
+  }
+}

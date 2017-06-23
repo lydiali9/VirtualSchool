@@ -13,37 +13,42 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        data : grunt.file.readYAML('./src/data/learningPaths.yml'),
+        learningPaths : grunt.file.readYAML('./src/design/data/learningPaths.yml'),
+        sampleCourses: grunt.file.readYAML('./src/design/data/SampleCourseModules.yml'),
         assemble: {
             learningPathDetails: {
                 options: {
-                    layout: "./src/layouts/learningPath.html",
-                    pages: '<%= data %>',
-                    partials: "./src/partials/**/*.hbs",
-                    helpers: "./src/helpers/**/*.js"
+                    layout: "./src/design/layouts/learningPath.html",
+                    pages: '<%= learningPaths %>',
+                    partials: "./src/design/partials/**/*.hbs",
+                    helpers: "./src/design/helpers/**/*.js"
                 },
                 files: {
-                  './src/pages/learningPaths/': ['!*']
+                  './src/design/pages/learningPaths/': ['!*']
                 }
             },
-            /*courseDetails: {
+            courseDetails: {
               options: {
-                  layout: "./src/layouts/course.html",
-                  pages: '<%= data.learningPaths %>'
+                layout: "./src/design/layouts/courseModule.html",
+                pages: '<%= sampleCourses %>',
+                partials: "./src/design/partials/**/*.hbs",
+                helpers: "./src/design/helpers/**/*.js"
               },
               files: {
-                './src/pages/courses/<%= data.learningPaths.filename %>': ['!*']
+                './src/design/pages/learningPaths/FinancialLiteracy/': ['!*']
               }
-            }*/
+            }
         },
         clean: {
             options: { force: true },
-            all: ['./src/pages/learningPaths/**/*', './src/pages/courses/**/*']
+            all: ['./src/design/pages/learningPaths/**/*']
         }
     });
 
+
     grunt.loadNpmTasks('grunt-assemble');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.registerTask('test', ['assemble']);
     grunt.registerTask('build', ['clean', 'assemble']);
     grunt.registerTask('default', function () {
       var msg = 'DO NOT USE DIRECTLY\n' +

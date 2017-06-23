@@ -1,0 +1,344 @@
+BasicsBusinessDev:
+  data:
+    title: "Basics of Business Development"
+    author: "Organization ABC"
+    filename: "BasicsBusinessDev"
+    likeCount: 60
+    tags:
+      - Finance
+      - Business Development
+      - Entrepreneurship
+    img: "assets/img/learningPaths/path_BasicsBusinessDev.png"
+    short-description: "Courses to help you create value for your organization - large or small."
+    description: "Courses to help you create value for your organization - large or small."
+    link: ""
+    link-title: "Explore Learning Path"
+    list-items:
+      - "Executive Communication"
+      - "Strategic Sales"
+      - "Negotiation"
+      - "Developing Professional Rapport"
+    active: false
+    courses:
+      -
+        title: "Blah"
+        length: 60
+EntrepreneurshipBasics:
+  data:
+    title: "Basics of Entrepreneurship"
+    author: "Organization ABC"
+    filename: "ExpandHorizons"
+    likeCount: 60
+    tags:
+      - Finance
+      - Business Development
+      - Entrepreneurship
+    img: "assets/img/learningPaths/path_Entrepreneurship.png"
+    short-description: "Courses tailored to starting and operating a small business."
+    description: "The Virtual Skills School provides top-notch online entrepreneurship education in topics spanning the art of negotiation to learning what great leaders do to create a startup business. These courses will teach you entrepreneur skills honed and refined by the masters of the business world in a free, online setting"
+    link: ""
+    link-title: "Explore Learning Path"
+    list-items:
+      - "Overcoming gender bias"
+      - "Inventions and Patents"
+      - "Law for the Entrepreneur"
+      - "Building and Leading Effective Teams"
+      - "Early Stage Capital"
+    active: false
+    courses:
+      -
+        title: "Introduction to small business ownership"
+        length: 60
+        modules:
+          -
+            title: "Most Powerful Women Entrepreneurs"
+            type: "video"
+            length: 15
+            featured-media: "YOUTUBE IFRAME"
+            content: ""
+          -
+            title: "Basics of small business ownership"
+            type: "default"
+            length: 10
+          -
+            title: "Developing a vision"
+            type: "game"
+            length: 10
+          -
+            title: "Investment Overview"
+            type: "default"
+            length: 15
+          -
+            title: "Organization and Delegation"
+            type: "article"
+            length: 10
+          -
+            title: "End of Course Assessment"
+            type: "assessment"
+      -
+        title: "Organizational Leadership and Change"
+        length: 60
+      -
+        title: "How to Develop 'Breakthrough' Products and Services"
+        length: 60
+      -
+        title: "Early Stage Capital"
+        length: 30
+      -
+        title: "Entrepreneurial Finance"
+        length: 30
+      -
+        title: "Product Design and Development"
+        length: 60
+      -
+        title: "Listening to the Customer"
+        length: 60
+      -
+        title: "Entrepreneurial Marketing"
+        length: 30
+      -
+        title: "Technology Strategy"
+        length: 30
+      -
+        title: "Nuts and Bolts of Business Plans"
+        length: 60
+      -
+        title: "The Art and Science of Negotiation"
+        length: 60
+ExpandHorizons:
+  data:
+    title: "Expand your horizons"
+    author: "Organization ABC"
+    filename: "ExpandHorizons"
+    likeCount: 60
+    tags:
+      - Finance
+      - Business Development
+      - Entrepreneurship
+    img: "assets/img/learningPaths/path_ExpandYourHorizons.png"
+    short-description: "Survey courses focusing on general knowledge you can use to build upon for the future."
+    description: "Survey courses focusing on general knowledge you can use to build upon for the future."
+    link: ""
+    link-title: "Explore Learning Path"
+    list-items:
+      - "Financial Management Basics"
+      - "Applied Sciences"
+      - "Gender Issues in the Workplace"
+      - "Computer Science"
+    active: false
+    courses:
+      -
+        title: "Blah"
+        length: 60
+FinancialLiteracy:
+  data:
+    title: "Financial Literacy"
+    author: "Pricewaterhouse Coopers"
+    filename: "FinancialLiteracy"
+    likeCount: 60
+    tags:
+      - Finance
+      - Business Development
+      - Entrepreneurship
+    img: "assets/img/learningPaths/path_FinancialLiteracy.jpg"
+    short-description: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    description: "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo."
+    link: ""
+    link-title: "Explore Learning Path"
+    list-items:
+      - "Ornare Mattis Bibendum"
+      - "Justo Elit Cras"
+      - "Tortor Euismod Vestibulum Justo"
+      - "Consectetur Ipsum Pharetra Etiam Malesuada"
+      - "Elit Ipsum Egestas"
+    active: true
+    courses:
+      -
+        title: "Introduction to Budgeting"
+        length: 60
+        modules:
+          FiveReasonswhyyouShouldhaveaFinancialPlan:
+            data:
+              module-id: 1
+              title: "Five Reasons why you Should have a Financial Plan"
+              type: "Video"
+              length: 15
+              featured-media: "YOUTUBE IFRAME"
+              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+              active: true
+          FourCommonSourcesofIncomeinahousehold:
+            data:
+              module-id: 2
+              title: "Four Common Sources of Income in a household"
+              type: "Video"
+              length: 15
+              featured-media: "YOUTUBE IFRAME"
+              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+              active: true
+          CreateABudgetForYourHousehold:
+            data:
+              title: "Create a budget for your household"
+              type: "Challenge"
+              active: true
+              optional: true
+          SixCommonCategoriesforExpensesinahousehold:
+            data:
+              module-id: 3
+              title: "Six Common Categories for Expenses in a household"
+              type: "Video"
+              length: 15
+              featured-media: "YOUTUBE IFRAME"
+              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+              active: true
+          ReadingAssignment:
+            data:
+              title: "Reading Assignment"
+              type: "Challenge"
+              active: true
+              optional: true
+          Creatingyouryearlybudget:
+            data:
+              module-id: 4
+              title: "Creating your yearly budget"
+              type: "Video"
+              length: 15
+              featured-media: "YOUTUBE IFRAME"
+              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+          FiveWaystobettermanageyourExpenses:
+            data:
+              module-id: 5
+              title: "Five Ways to better manage your Expenses"
+              type: "Video"
+              length: 15
+              featured-media: "YOUTUBE IFRAME"
+              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+          FourEssentialFormalFinancialServicesthatyouShouldKnowAbout:
+            data:
+              module-id: 6
+              title: "Four Essential Formal Financial Services that you Should Know About"
+              type: "Video"
+              length: 15
+              featured-media: "YOUTUBE IFRAME"
+              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
+      -
+        title: "Gender IQ"
+        length: 60
+        modules:
+          IntroductionUnderstandingGenderAndGenderNorms:
+            data:
+              module-id: 1
+              title: "Introduction – Understanding Gender & Gender Norms"
+              type: "Flash"
+              active: true
+          TheGlobalCosOfGenderInequality:
+            data:
+              module-id: 2
+              title: "The Global Cost of Gender Inequality"
+              type: "Flash"
+              active: true
+          TheBenefitsOfGenderEquality:
+            data:
+              module-id: 3
+              title: "The Benefits of Gender Equality"
+              type: "Flash"
+              active: true
+          GenderIQCallToAction:
+            data:
+              module-id: 4
+              title: "Call to Action – how can we each play a role in creating inclusive cultures and working towards gender equality?"
+              type: "Flash"
+    final:
+      -
+        title: "Final Assessment"
+        length: 60
+        type: "assessment"
+      -
+        title: "Certificate"
+        type: "certificate"
+
+Foundational:
+  data:
+    title: "Foundational"
+    author: "Organization ABC"
+    filename: "Foundational"
+    likeCount: 60
+    tags:
+      - Finance
+      - Business Development
+      - Entrepreneurship
+    img: "assets/img/learningPaths/featured_Foundational.png"
+    short-description: "Learning paths in this section cover the foundational subjects typically covered throughout secondary educations courses. Learning paths in this area may be best for you if you were unable to complete secondary education or need a refresher."
+    description: "Learning paths in this section cover the foundational subjects typically covered throughout secondary educations courses. Learning paths in this area may be best for you if you were unable to complete secondary education or need a refresher."
+    link: ""
+    link-title: "View More"
+    list-items:
+      - "Literature"
+      - "Chemistry"
+      - "Physics"
+      - "Mathematics"
+      - "Social Studies"
+      - "Art & Design"
+      - "World History"
+      - "Biology"
+    active: false
+    courses:
+      -
+        title: "Test"
+        length: 60
+SkillsForLife:
+  data:
+    title: "Skills for Life"
+    author: "Organization ABC"
+    filename: "SkillsForLife"
+    likeCount: 60
+    tags:
+      - Finance
+      - Business Development
+      - Entrepreneurship
+    img: "assets/img/learningPaths/featured_SkillsForLife.png"
+    short-description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
+    description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
+    link: ""
+    link-title: "View More"
+    list-items:
+      - "Expand your horizons"
+      - "Digital Literacy"
+      - "Communications"
+      - "Gender Issues"
+      - "Financial Literacy"
+      - "Critical-thinking skills"
+      - "Social and Cultural Awareness"
+    active: false
+    courses:
+      -
+        title: "Test"
+        length: 60
+Vocational:
+  data:
+    title: "Vocational"
+    author: "Organization ABC"
+    filename: "Vocational"
+    likeCount: 60
+    tags:
+      - Finance
+      - Business Development
+      - Entrepreneurship
+    img: "assets/img/learningPaths/featured_Vocational.png"
+    short-description: "Learning paths in this section relate to specific career options where there's significant potential for employment opportunity. Pathways in this area will provide you with the core skills needed to enter a particular line of work."
+    description: "Learning paths in this section relate to specific career options where there's significant potential for employment opportunity. Pathways in this area will provide you with the core skills needed to enter a particular line of work."
+    link: ""
+    link-title: "View More"
+    list-items:
+      - "Tax & Book keeping"
+      - "Plumbing"
+      - "Real estate"
+      - "Electrical systems"
+      - "Entrepreneurship"
+      - "Computer Networks"
+      - "General Contracting"
+      - "Software Development"
+    active: false
+    courses:
+      -
+        title: "Test"
+        length: 60

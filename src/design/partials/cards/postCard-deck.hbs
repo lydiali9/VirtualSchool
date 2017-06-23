@@ -1,0 +1,20 @@
+{{#each data}}
+  <div class="card-column" {{#if active}}status="active"{{else}}status="inactive"{{/if}}>
+    <div class="card">
+      <div class="featured-img" data-imagizer>
+        <img src="{{img}}" alt=""/>
+      </div>
+      <h4 class="title">{{title}}</h4>
+      <h5 class="description">{{short-description}}</h5>
+      <div class="lt-separator"></div>
+      <ul class="listing">
+        {{#each list-items}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{#if active}}
+        <a class="link-back" href="learningPaths/{{filename}}.html">{{link-title}}</a>
+      {{/if}}
+    </div>
+  </div>
+{{/each}}

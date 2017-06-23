@@ -1,0 +1,77 @@
+<!-- MODAL WRAPPER STARTS : LOGIN -->
+<div class="xlarge reveal text-center modal useraction-modal" id="LoginModal" data-reveal data-close-on-click='true'>
+    <button class="close-button" data-close aria-label="Close Reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div id="success-message" class="row align-center" style="display: none;">
+        <div class="columns small-12 medium-8 text-center">
+            <div class="title-headingBlock row small-collapse align-middle align-center">
+                <h3 class="type-header-large column small-12 text-center success-message-text"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="heading text-center`">
+            <h1 class="type-header-large columns small-12">Login</h1>
+        </div>
+
+    <div class="heading text-center">
+        <h2 class="type-header-medium columns small-12">Use your social media or use your e-mail</h2>
+    </div>
+    <div class="row content align-middle">
+        <div class="register-column">
+            <div class="row lt-border-bottom lt-border-compressed lt-border-hide-medium">
+                <div class="small-10 medium-8 medium-centered small-centered columns social-wrap">
+                    <button class="button social facebook" data-connectingText="@TranslatedText.GetCommonTextItem(CommonEWTextNames.ConnectingWithFacebook)" onclick="void(); return false;" disabled>
+                      <span class="btn-label" style="display:inline">Login with Facebook</span>
+                      <span class="loader" style="display: none;"></span>
+                    </button>
+                  <button class="button social twitter" data-connectingText="@TranslatedText.GetCommonTextItem(CommonEWTextNames.ConnectingWithTwitter)" onclick="void(); return false;" disabled>
+                    <span class="btn-label" style="display:inline">Login with Twitter</span>
+                    <span class="loader" style="display: none;"></span>
+                  </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="register-column lt-border-compressed lt-border-hide-small border-show-medium">
+            <form class="form login-form" data-abide="ajax", novalidate="" action>
+                <div class="row align-middle">
+                    <div class="small-12 medium-8 medium-centered small-centered columns text-left">
+                        <div data-abide-error class="alert callout" style="display: none;">
+                            <p><i class="fi-alert"></i> Please Complete the Required Fields</p>
+                        </div>
+                        <div class="alert callout invalid-user" style="display: none;">
+                            <p><i class="fi-alert"></i> <span id="generalErrorText"></span></p>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="username">
+                                E-Mail<small class='required'>Required</small>
+                                <input disabled class="input" Type="email" id="Email" name="username" required="" type="text" value="arpitha.shetty@pwc.com" autocomplete="on"/>
+                                <small class="form-error">Please Enter Your E-Mail.</small>
+                            </label>
+                        </div>
+
+
+                        <div class="input-wrapper">
+                            <label for="password">
+                                Password<small class='required'>Required</small>
+                                <input class="input" disabled Type="password" id="Password" name="Password" required="" type="password" value="Shanghai2015" />
+                                <small class="form-error">Please Enter Your Password</small>
+                            </label>
+                            <h5><a data-toggle="ForgotPasswordModal">Forgot Password</a></h5>
+                        </div>
+                        <div class="text-center">
+                          <a class="button primary modal-form-submit" onclick="Login();">
+                            <span class="btn-label" style="display: inline;">Login</span>
+                            <span class="loader" style="display: none;"></span>
+                          </a>
+                          <h5 class="show-for-medium">Not a Member? <a href="/register.html">Register</a></h5>
+                        </div>
+                      </div>
+                </div>
+        </div>
+    </div>
+    </div>
+</div>

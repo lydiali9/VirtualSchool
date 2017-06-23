@@ -1,0 +1,12 @@
+<li>
+  <a href="{{root}}MyProfile.html" class="header-link">
+      <div class="header-link-username">Arpitha Shetty</div>
+      <div class="header-link-notification">(4)</div>
+  </a>
+  <ul class="user-submenu">
+      <li><a href="@UrlHelper.GetUrlFromSitecorePath(Constants.EWPaths.Community.People.MY_PROFILE)">View/Edit Profile</a></li>
+      <li><a href="@UrlHelper.GetUrlFromSitecorePath(Constants.EWPaths.Community.People.CHANGE_PASSWORD)">Change Password</a></li>
+      <li><a href="@UrlHelper.GetUrlFromSitecorePath(Constants.EWPaths.Community.People.CHANGE_EMAIL)">Change Login Email</a></li>
+  </ul>
+</li>
+<li><a onclick="Logout();" class="header-link">Sign Out</a></li>

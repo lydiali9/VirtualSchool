@@ -1,0 +1,27 @@
+data:
+  title: "Vocational"
+  author: "Organization ABC"
+  likeCount: 60
+  tags:
+    - Finance
+    - Business Development
+    - Entrepreneurship
+  img: "assets/img/learningPaths/featured_Vocational.png"
+  short-description: "Learning paths in this section relate to specific career options where there's significant potential for employment opportunity. Pathways in this area will provide you with the core skills needed to enter a particular line of work."
+  description: "Learning paths in this section relate to specific career options where there's significant potential for employment opportunity. Pathways in this area will provide you with the core skills needed to enter a particular line of work."
+  link: ""
+  link-title: "View More"
+  list-items:
+    - "Tax & Book keeping"
+    - "Plumbing"
+    - "Real estate"
+    - "Electrical systems"
+    - "Entrepreneurship"
+    - "Computer Networks"
+    - "General Contracting"
+    - "Software Development"
+  active: false
+  courses:
+    -
+      title: "Test"
+      length: 60

@@ -1,0 +1,49 @@
+<div class="card-section {{cardType}}">
+  {{#compare cardType "member-profile-edit" operator="=="}}
+    <!--
+          @Html.Partial("~/Views/Renderings/EmpowerWomen/Common/Forms/Form-Elements/GenericFormField.cshtml", new ViewDataDictionary() {
+              { "field", "FirstName" },
+              { "title", TranslatedText.GetCommonTextItem(CommonEWTextNames.FirstName) },
+              { "value", Model.FirstName },
+              { "required", true },
+              { "progress", 2.5 }  })
+          @Html.Partial("~/Views/Renderings/EmpowerWomen/Common/Forms/Form-Elements/GenericFormField.cshtml", new ViewDataDictionary() {
+              { "field", "LastName" },
+              { "title", TranslatedText.GetCommonTextItem(CommonEWTextNames.LastName) },
+              { "value", Model.LastName },
+              { "required", true },
+              { "progress", 2.5 } })
+          @Html.Partial("~/Views/Renderings/EmpowerWomen/Common/Forms/Form-Elements/GenericFormField.cshtml", new ViewDataDictionary() {
+              { "field", "Email" },
+              { "title", TranslatedText.GetCommonTextItem(CommonEWTextNames.Email) },
+              { "value", Model.Email },
+              //{ "readonly", true },
+              //{ "required", true },
+              {"disabled", true }
+              })
+          <div class="input-wrapper">
+              <label for="hiddenEmail">
+                  <input id="HiddenEmail" type="checkbox" class="checkbox" name="HiddenEmail" @(Model.HiddenEmail ? "checked" : string.Empty) />
+                  <span>@TranslatedText.GetCommonTextItem(CommonEWTextNames.ShowEmailLabel)</span>
+              </label>
+          </div>
+          @Html.Partial("~/Views/Renderings/EmpowerWomen/Common/Forms/Form-Elements/GenericFormField.cshtml", new ViewDataDictionary() {
+              { "field", "Facebook" },
+              { "title", "Facebook URL" },
+              { "value", Model.Facebook } })
+          @Html.Partial("~/Views/Renderings/EmpowerWomen/Common/Forms/Form-Elements/GenericFormField.cshtml", new ViewDataDictionary() {
+              { "field", "Twitter" },
+              { "title", "Twitter "+ TranslatedText.GetCommonTextItem(CommonEWTextNames.Handle) },
+              { "value", Model.Twitter } })
+          @Html.Partial("~/Views/Renderings/EmpowerWomen/Common/Forms/Form-Elements/GenericFormField.cshtml", new ViewDataDictionary() {
+              { "field", "LinkedIn" },
+              { "title", "LinkedIn URL" },
+              { "value", Model.LinkedIn } })
+    -->
+  {{/compare}}
+  {{#compare cardType "member-profile" operator="=="}}
+    <h1 class="header-title type-header-medium" progress="5">Arpitha Shetty</h1>
+    <h3 class="header-position type-header-small" >Director at Pricewaterhouse Coopers</h3>
+    <h2 class="header-locale type-subtitle-xsmall primary-color">New York</h2>
+  {{/compare}}
+</div>

@@ -1,0 +1,38 @@
+.title-headingBlock {
+  @include flex-grid-row();
+
+  .description {
+    @include flex-grid-column(8);
+    text-align: center;
+
+    @include breakpoint(medium down) {
+      @include flex-grid-column(10);
+    }
+  }
+
+  &.block-large {
+
+    .description {
+      @include flex-grid-column(12);
+    }
+  }
+
+
+  &.headingBlock-img {
+    .featured-img {
+      width: 260px;
+      margin-right: 2rem;
+      margin-top: 0.5rem;
+      max-height: 180px;
+      overflow: hidden;
+    }
+
+    .type-header-large {
+      margin-bottom: .5rem;
+    }
+
+    .description {
+      text-align: left;
+    }
+  }
+}

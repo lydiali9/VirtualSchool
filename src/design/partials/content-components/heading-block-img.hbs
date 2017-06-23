@@ -1,0 +1,21 @@
+<div class="title-headingBlock headingBlock-img {{data.cssClass}} {{cssClass}} row small-collapse text-left align-top">
+  <div class="columns shrink featured-img" data-imagizer>
+    <img src="../{{data.img}}"/>
+  </div>
+  <div class="columns expand">
+    <h2 class='type-header-large column'>
+        {{data.title}}
+            {{#if data.subtitle}}
+                <small class='type-subtitle-small subtitle primary-color lt-margin-lower-small'>{{data.subtitle}}</small>
+            {{/if}}
+    </h2>
+    {{#if data.description}}
+      <h3 class='type-subtitle-large description'>{{data.description}}</h2>
+    {{/if}}
+    {{#if data.CTA.link-title}}
+      <div class="column small-12 text-center">
+              <a class="button primary" href="{{link}}">{{data.CTA.link-title}}</a>
+      </div>
+    {{/if}}
+  </div>
+</div>

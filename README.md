@@ -9,7 +9,10 @@ future of society as a whole.
 
 More details on this endeavor to come...
 
- 
+Warning This README is out of date.
+---------------
+Currently transitioning to an Angular2 Hybrid Design Platform. The active branch for development is currently angular-seed.
+
 
 Getting Started
 ---------------

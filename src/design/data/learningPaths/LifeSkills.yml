@@ -1,0 +1,26 @@
+data:
+  title: "Skills for Life"
+  author: "Organization ABC"
+  likeCount: 60
+  tags:
+    - Finance
+    - Business Development
+    - Entrepreneurship
+  img: "assets/img/learningPaths/featured_SkillsForLife.png"
+  short-description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
+  description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
+  link: ""
+  link-title: "View More"
+  list-items:
+    - "Expand your horizons"
+    - "Digital Literacy"
+    - "Communications"
+    - "Gender Issues"
+    - "Financial Literacy"
+    - "Critical-thinking skills"
+    - "Social and Cultural Awareness"
+  active: false
+  courses:
+    -
+      title: "Test"
+      length: 60

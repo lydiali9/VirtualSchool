@@ -1,0 +1,334 @@
+// Base Styling
+h1, h2, h3, h4, h5, h6, p, .content, .comment-description {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    -ms-word-break: break-word;
+    -ms-word-wrap: hyphenate;
+    margin-bottom: 0;
+
+    .zh & {
+        font-family: $special-font-family;
+    }
+}
+
+small {
+  &.subtitle {
+    display: block;
+  }
+}
+
+// Mixins
+@mixin font-over-primary ($size: 16px, $weight: 400) {
+  color: $white;
+  font: {
+    size: rem-calc($size);
+    weight: $weight;
+  }
+}
+
+@mixin type($style: 'body', $size: 'copy', $element: $size, $weight: 600, $color: $body-font-color) {
+  @if $size == 'xlarge' {$element: 'h1'}
+  @else if $size == 'large' {$element: 'h2'}
+  @else if $size == 'medium' {$element: 'h3'}
+  @else if $size == 'small' {$element: 'h4'}
+  @else if $size == 'xsmall' {$element: 'h5'}
+  @else if $size == 'xxsmall' {$element: 'h6'}
+  @else {$element: 'h4'}
+
+  @if $style == 'header' {
+    @if $size == 'xlarge' or $size == 'large' {
+      $weight: 700;
+      $color: $primary-color;
+    }
+    color: $color;
+    @include font-size(map-get(map-get($header-sizes, medium), $element));
+    font: {
+      weight: $weight;
+    }
+  }
+  @else if $style == 'subtitle' {
+    @if $size == 'xlarge' or $size == 'large' or $size == 'medium' {
+      $weight: 400;
+    }
+    color: $color;
+    @include font-size(map-get(map-get($header-sizes, medium), $element));
+    font: {
+      weight: $weight;
+    }
+  }
+  @else {
+    @debug "Incorrect syntax format for type mixin; Defaulting to type-body-copy";
+    @include type-body-copy();
+  }
+}
+
+// Classes
+$module: '.type';
+#{$module} {
+  // Generic
+  @include type-styles();
+
+  // Headings
+  &-header {
+    &-xlarge {
+      color: $primary-color;
+      @include font-size(map-get(map-get($header-sizes, medium), h1));
+      font: {
+        weight: 700;
+      }
+
+      @include breakpoint(medium down) {
+          @include font-size(map-get(map-get($header-sizes, medium), h2));
+      }
+    }
+    &-large {
+      color: $primary-color;
+      @include font-size(map-get(map-get($header-sizes, medium), h2));
+      font: {
+        weight: 700;
+      }
+      .btn-align {
+        margin: 0.5rem 0;
+      }
+    }
+    &-medium {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, medium), h3));
+      font: {
+        weight: 600;
+      }
+    }
+    &-small {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, medium), h4));
+      font: {
+        weight: 600;
+      }
+    }
+    &-xsmall {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, medium), h5));
+      font: {
+        weight: 600;
+      }
+    }
+  }
+  &-subtitle {
+    &-xlarge {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, subtitle), h1));
+      font: {
+        weight: 400;
+      }
+    }
+    &-large {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, subtitle), h2));
+      font: {
+        weight: 400;
+      }
+    }
+    &-medium {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, subtitle), h3));
+      font: {
+        weight: 400;
+      }
+    }
+    &-small {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, subtitle), h4));
+      font: {
+        weight: 600;
+      }
+      &__no-space {
+        @extend .type-subtitle-small;
+        margin: 0;
+      }
+    }
+    &-xsmall {
+      color: $body-font-color;
+      @include font-size(map-get(map-get($header-sizes, subtitle), h5));
+      font: {
+        weight: 600;
+      }
+    }
+  }
+  &-generic {
+    font-family: $alternate-font;
+    @include font-size(map-get(map-get($header-sizes, medium), h6));
+
+    .zh & {
+        font-family: $special-alternate-font;
+    }
+  }
+  &-body-copy {
+    color: $body-font-color;
+    @include font-size(14);
+    &-gray {color: $medium-gray-accent;}
+    &-semibold {font-weight: 600;}
+  }
+  &-semibold {font-weight: 600;}
+  &-bold {font-weight: bold;}
+  &-tag {
+
+    border: 1px solid $light-gray;
+    padding: 0 15px;
+    min-height: 35px;
+    border-radius: $keystroke-radius;
+    display: inline-block;
+    line-height: 2.3;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    @include font-size(14)
+
+    a {
+        color: $medium-gray-accent !important;
+    }
+
+    &:hover {
+        a {
+            color: $primary-color !important;
+        }
+    }
+  }
+  &-primary-color {
+      color: $body-font-color;
+  }
+
+  &-alert {
+      color: $secondary-color;
+      font-weight: 700;
+  }
+  &-legal {
+    color: $body-font-color;
+    @include font-size(10);
+  }
+  &-label {
+    @include font-size(13);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &-smaller {
+    font: {
+      size: 0.9rem;
+    }
+  }
+
+  &-lowercase {
+      text-transform: lowercase;
+  }
+}
+a {
+  color: $secondary-color;
+  font: {
+    family: $alternate-font;
+    weight: 700;
+  }
+
+  .zh & {
+    font-family: $special-alternate-font;
+  }
+  &.arrow-link {
+    font: {
+      size: 1.1em;
+    }
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &.text-right {
+        padding-right: 1rem;
+    }
+
+    &:after {
+        content: ">";
+        position: absolute;
+        right: 0;
+    }
+  }
+}
+blockquote {
+  position: relative;
+  line-height: 1.6;
+  font-family: $body-font-family;
+  color: $medium-gray-accent;
+  @include font-size(20);
+  margin-bottom: 0.5rem;
+
+  .zh & {
+      font-family: $special-font-family !important;
+  }
+
+  &:before,
+  &:after {
+    color: $secondary-color;
+    @include font-size(30);
+    position: absolute;
+  }
+  &:before {
+    content: "\201C";
+    left: -1rem;
+    top: 4px;
+  }
+  &:after {
+    content: "\201D";
+    margin-top: -10px;
+  }
+}
+
+ul {
+  margin-bottom: 1rem;
+}
+
+.story-content {
+    padding-right: 0.9375rem;
+    ul {
+        list-style-type: disc;
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+p {
+    line-height: 1.2;
+}
+
+.primary-color {color: $primary-color;}
+.secondary-color {color: $secondary-color;}
+.faded-purple {color: $primary-purple-filter;}
+.body-color {color: $body-font-color;}
+.static-color {color: $highlight-color;}
+
+.show-more {
+    &:after {
+        content: '';
+        padding-left: 1rem;
+        margin-left:0.5rem;
+        @include background-arrow('down', $secondary-color, 2px);
+        background-position:center;
+    }
+
+    &:hover {
+        &:after {
+            @include background-arrow('down', $primary-color, 2px);
+        }
+    }
+}
+
+
+/* RTL STYLING CORRECTIONS (ARABIC) */
+html[dir="rtl"] {
+    a {
+        &.arrow-link {
+            &:after {
+                right: initial;
+            }
+        }
+    }
+}

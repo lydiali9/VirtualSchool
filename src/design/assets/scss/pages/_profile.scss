@@ -1,0 +1,188 @@
+.profile-overview, .profile-overview-edit, profile-completeness {
+    @include grid-column-row();
+    background: white;
+    min-height: 567px;
+    display: block !important;
+
+    @include breakpoint(medium down) {
+        height: auto;
+        min-height: 0;
+    }
+
+    .card-group .card {
+        padding: 20px 0;
+
+        @include breakpoint(medium down) {
+            width: 100%;
+            float: none;
+        }
+    }
+}
+
+.user-tools {
+    height: 807px;
+
+    @include breakpoint(medium down) {
+        margin-top: 1rem;
+        border-left: none;
+        height: auto;
+    }
+
+    & > .row {
+        padding: 20px 0;
+    }
+
+    .img-caption {
+        margin-top: 30px;
+
+        p {
+            width: 200px;
+            margin: 0 auto;
+
+            @include breakpoint(medium down) {
+                width: auto;
+            }
+        }
+
+        &:nth-child(2) .icon {
+            background-position: -133px -75px;
+        }
+
+        &:nth-child(3) .icon {
+            background-position: -295px -75px;
+        }
+
+        &:nth-child(4) .icon {
+            background-position: -460px -75px;
+        }
+
+        .icon {
+            margin: 0 auto 10px;
+            @include border-radius(50%);
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+.edit-profile {
+    //padding: 40px 0;
+
+    &-content {
+        padding: 40px;
+
+        @include breakpoint(small only) {
+            padding: 20px;
+        }
+
+        small.required {
+            float: none !important;
+            margin-left: 10px !important;
+        }
+
+        select, input {
+            min-width: 300px;
+            width: auto;
+
+            @include breakpoint(medium down) {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+
+        label {
+            .input-label {
+                display: block;
+            }
+        }
+
+        .input-wrapper {
+            width: 100%;
+        }
+
+        span.select2.select2-container.select2-container--default {
+            max-width: 100%;
+        }
+
+        select {
+            padding-right: 40px;
+            display: block;
+        }
+
+        textarea {
+            min-height: 500px;
+            max-height: 760px;
+            overflow-y: auto;
+            resize: none;
+        }
+
+        .joined {
+            select {
+                min-width: 0;
+                margin-right: 20px;
+                display: inline-block;
+            }
+        }
+
+        .button.primary {
+            min-width: 190px;
+            margin: 40px 0;
+        }
+    }
+}
+
+.profile {
+    &-block {
+        padding: 1.5rem;
+        box-shadow: 1px 1px 2px rgba($black, 0.25);
+        flex: 1;
+
+
+        &.user-feed {
+            li {
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.5rem;
+
+                @include breakpoint(medium up) {
+                    padding: 0;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &-overview {
+        //margin-right: 10px;
+    }
+
+    &-content {
+        margin-left: 10px;
+        height: 100%;
+
+        @include breakpoint(small only) {
+            margin: 0;
+        }
+    }
+
+    &-shadow-bottom {
+        box-shadow: 0px 3px 2px -2px rgba($black, 0.25);
+    }
+
+    &-row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        .member-flex-column {
+            display: flex;
+            flex-flow: column;
+        }
+    }
+}
+
+/* RTL STYLING CORRECTIONS (ARABIC) */
+html[dir="rtl"] {
+    .profile-content{
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}

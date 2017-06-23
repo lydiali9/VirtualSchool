@@ -1,0 +1,82 @@
+below-banner-content:
+  -
+    title: "Is the Virtual Skills School Right for you?"
+guided-navigation-v1:
+  title: "Is the Virtual Skills School Right for you?"
+  description: "Are you looking to..."
+  CTA:
+    link-title: "Enroll for Free"
+    link: "register.html"
+  subitems:
+    -
+      title: "Expand your horizons with life-long learning?"
+      img: "assets/img/homepage/GuidedNav01.png"
+      link: "http://campbbre.ispringlearn.com/content/info/5"
+      cssClass: ""
+    -
+      title: "Become an entrepreneur?"
+      img: "assets/img/homepage/GuidedNav02.png"
+      link: "https://vss.talentlms.com/dashboard/index/role:learner"
+      cssClass: ""
+    -
+      title: "Develop skills for your career"
+      img: "assets/img/homepage/GuidedNav03.png"
+      link: "browse.html"
+      cssClass: ""
+guided-navigation-v2:
+  title: "Find your Learning Path"
+  description: ""
+  CTA:
+    link-title: ""
+    link: ""
+  categories:
+    -
+      icon: "21stcentury"
+      subitems:
+        -
+          title: "21st Century Skills Pathways"
+          description: "Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla."
+    -
+      icon: "Foundational"
+      subitems:
+        -
+          title: "Foundational Pathways"
+          description: "Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna. Praesent commodo cursus magna."
+    -
+      icon: "Vocational"
+      subitems:
+        -
+          title: "Vocational Pathways"
+          description: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus."
+    -
+      icon: "ChangemakerOrg"
+      subitems:
+        -
+          title: "Organization Pathways"
+          description: "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+featured-learningPaths:
+  heading:
+    img:
+      path:
+      alt:
+    title: "Featured Learning Paths"
+    description:
+  recommendations:
+    - "FinancialLiteracy"
+    - "EntrepreneurshipBasics"
+    - "ExpandHorizons"
+    - "BasicsBusinessDev"
+about-headingBlock:
+  title: "About the Virtual Skills School"
+  description: "The Virtual Skills School provides a virtual learning platform to overcome women’s and girls’ physical, cost and other opportunity barriers, and offers courses and training, certification, and learning pathways. It fosters a next generation of women and men, girls and boys that will:"
+  cssClass: "block-large"
+about-orderedList:
+  -
+    title:
+    description: "Take action for gender equality and women’s empowerment;"
+  -
+    title:
+    description: "Have expanded opportunities and ability to make informed decisions about their skills investments in the emerging digital and innovation society and economy;"
+  -
+    title:
+    description: "Acquire jobs and grow businesses, particularly in high value sectors."
