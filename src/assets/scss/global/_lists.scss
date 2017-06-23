@@ -47,7 +47,6 @@ $module: '.list';
       &:last-child {
         &:after {
           content: "";
-          display: none;
         }
       }
     }

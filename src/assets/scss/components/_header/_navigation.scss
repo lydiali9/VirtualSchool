@@ -1,11 +1,47 @@
+
 .navigation {
   background: map-get($foundation-palette, primary);
   width: 100%;
   z-index: 10;
-  padding: 12px 0;
 
-  @include breakpoint(medium down) {
-    padding: 6px 0;
+  &-logo {
+    @include flex-grid-column(null, 0);
+    @include flex-grid-column-align(middle);
+    display: flex;
+    position: absolute;
+    width: 182px;
+    margin-left: 20px;
+    left: 30px;
+
+    @include breakpoint(iphone) {
+      margin-left: -91px;
+      left: 50%;
+    }
+    a {
+      width: 182px;
+      margin: 1rem auto;
+    }
+    .global-sprite {
+      width: 182px;
+      height: 28px;
+      background-position: -6px -40px;
+      background-size:282%;
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    .logo {
+      &-vs {
+        h1 {
+          color: $white;
+          font-size: 1.8rem;
+          display: inline-block;
+          margin: 9px 0px 0 16px;
+        }
+      }
+    }
   }
 
   &-menu {
@@ -13,31 +49,11 @@
     margin-top: 0;
     margin-bottom: 0;
     list-style-type: none;
-    @include flex-grid-row();
-    //@include flex-align(right, middle);
-    height: 60px;
-
-    @include breakpoint(medium down) {
-      @include flex-align(center, middle);
-    }
+    @include flex-grid-row(collapse);
+    @include flex-grid-row-align(right, middle);
 
     & a {
       text-decoration: none;
-    }
-
-    .user-menu {
-      li {
-        color: white;
-        margin-top: .5rem;
-
-        a {
-          color: white;
-
-          &:hover {
-            color: $secondary-color;
-          }
-        }
-      }
     }
   }
   .menu-item {
@@ -50,7 +66,7 @@
     padding: 0 0.25rem;
 
 
-    @include breakpoint(iphone) {
+    @include breakpoint(iphone6) {
       padding: 0 0.5rem;
     }
     @include breakpoint(340px down) {
@@ -96,7 +112,8 @@
   }
 
   @include breakpoint(large) {
-    @include ew-navigation;
+    @include ew-navigation-desktop;
+
   }
 
   &-mobile {

@@ -7,15 +7,15 @@
   </h2>
 
   {{#if data.description}}
-    <h3 class='type-header-small column large-10 medium-10 small-10 text-center lt-margin-lower-medium'>{{data.description}}</h2>
+    <h3 class='type-subtitle-xlarge column large-10 medium-10 small-10 text-left faded-purple lt-margin-lower-medium'>{{data.description}}</h2>
   {{/if}}
-  <ul class="guided-navigation guided-avatar">
-    {{>guided-feed-item-v2 data=data.categories}}
+  <ul class="guided-navigation guided-feed">
+    {{>guided-feed-item data=data.subitems}}
   </ul>
 
   {{#if data.CTA.link-title}}
     <div class="column small-12 text-center">
-        <a class="button primary" href="{{data.CTA.link}}">{{data.CTA.link-title}}</a>
+        <a class="button secondary" href="{{link}}">{{data.CTA.link-title}}</a>
     </div>
   {{/if}}
 </div>

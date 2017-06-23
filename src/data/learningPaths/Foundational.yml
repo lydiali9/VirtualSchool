@@ -7,7 +7,6 @@ data:
     - Business Development
     - Entrepreneurship
   img: "assets/img/learningPaths/featured_Foundational.png"
-  short-description: "Learning paths in this section cover the foundational subjects typically covered throughout secondary educations courses. Learning paths in this area may be best for you if you were unable to complete secondary education or need a refresher."
   description: "Learning paths in this section cover the foundational subjects typically covered throughout secondary educations courses. Learning paths in this area may be best for you if you were unable to complete secondary education or need a refresher."
   link: ""
   link-title: "View More"
@@ -20,7 +19,6 @@ data:
     - "Art & Design"
     - "World History"
     - "Biology"
-  active: false
   courses:
     -
       title: "Test"

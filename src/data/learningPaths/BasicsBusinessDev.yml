@@ -7,7 +7,6 @@ data:
     - Business Development
     - Entrepreneurship
   img: "assets/img/learningPaths/path_BasicsBusinessDev.png"
-  short-description: "Courses to help you create value for your organization - large or small."
   description: "Courses to help you create value for your organization - large or small."
   link: ""
   link-title: "Explore Learning Path"
@@ -16,7 +15,6 @@ data:
     - "Strategic Sales"
     - "Negotiation"
     - "Developing Professional Rapport"
-  active: false
   courses:
     -
       title: "Blah"

@@ -4,7 +4,6 @@ h1, h2, h3, h4, h5, h6, p, .content, .comment-description {
     word-break: break-word;
     -ms-word-break: break-word;
     -ms-word-wrap: hyphenate;
-    margin-bottom: 0;
 
     .zh & {
         font-family: $special-font-family;
@@ -57,7 +56,7 @@ small {
     }
   }
   @else {
-    @debug "Incorrect syntax format for type mixin; Defaulting to type-body-copy";
+    @warn "Incorrect syntax format for type mixin; Defaulting to type-body-copy";
     @include type-body-copy();
   }
 }

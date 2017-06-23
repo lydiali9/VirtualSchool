@@ -43,7 +43,7 @@
 $foundation-palette: (
   primary: #3E0C57,
   secondary: #E64938,
-  success: #3adb76, //rgba(62,12,87, .65),
+  success: rgba(62,12,87, .65),
   warning: #ffae00,
   alert: #E64938,
 );
@@ -52,7 +52,6 @@ $foundation-palette: (
 // $global-lineheight: 1.5;
 $primary-color: #3E0C57; // Primary Palette - Purple
 $secondary-color: #E64938; // Primary Palette - Red
-$success-color: #3adb76;
 // $success-color: #3adb76;
 // $warning-color: #ffae00;
 $alert-color: $secondary-color;
@@ -158,11 +157,10 @@ $breadcrumbs-item-color: $body-font-color;
 
 $breakpoints: (
   small: 0px,
-  iphone: 400,
+  iphone: 340,
   phablet: 640,
-  //subtitle: 700px,
-  medium: 768px,
-  //subtitle: 800,
+  subtitle: 768,
+  medium: 768,
   large: 1024,
   xlarge: 1200,
   xxlarge: 1440
@@ -389,7 +387,7 @@ $reveal-zindex: 997;
 // ------
 
 // $switch-background: $medium-gray;
-$switch-background-active: $success-color;
+// $switch-background-active: $primary-color;
 // $switch-height: 2rem;
 // $switch-height-tiny: 1.5rem;
 // $switch-height-small: 1.75rem;

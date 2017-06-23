@@ -11,13 +11,9 @@ signupForm:
   -
     title: "Name:"
     type: "input"
-    default: "Hiba Asif"
-    disabled: true
   -
     title: "Email address:"
     type: "input"
-    default: "hiba.asif123@gmail.com"
-    disabled: true
   -
     title: "Where do you live?"
     type: "select"
@@ -31,13 +27,10 @@ signupForm:
       - "Spain"
       - "Turkey"
       - "United Arab Emirates"
-    disabled: true
   -
     title: ""
     type: "input"
     placeholder: "City"
-    default: "New York City"
-    status: disabled
   -
     title: "Sex"
     type: "select"
@@ -46,7 +39,6 @@ signupForm:
       - "female"
       - "male"
       - "not specified"
-    disabled: true
   -
     title: "Age Range"
     type: "select"
@@ -57,7 +49,6 @@ signupForm:
       - "35-39 years"
       - "40-50 years"
       - "60+ years"
-    disabled: true
 signupOptionalForm:
   -
     title: "Highest level of schooling completed:"
@@ -100,4 +91,4 @@ signupOptionalForm:
       - "no"
 signupCTA:
   link-title: "Get Started"
-  link: "/VerifyEmail.html"
+  link: "/browse.html"

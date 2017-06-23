@@ -13,13 +13,12 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        learningPaths : grunt.file.readYAML('./src/data/learningPaths.yml'),
-        sampleCourses: grunt.file.readYAML('./src/data/SampleCourseModules.yml'),
+        data : grunt.file.readYAML('./src/data/learningPaths.yml'),
         assemble: {
             learningPathDetails: {
                 options: {
                     layout: "./src/layouts/learningPath.html",
-                    pages: '<%= learningPaths %>',
+                    pages: '<%= data %>',
                     partials: "./src/partials/**/*.hbs",
                     helpers: "./src/helpers/**/*.js"
                 },
@@ -27,28 +26,24 @@ module.exports = function(grunt) {
                   './src/pages/learningPaths/': ['!*']
                 }
             },
-            courseDetails: {
+            /*courseDetails: {
               options: {
-                layout: "./src/layouts/courseModule.html",
-                pages: '<%= sampleCourses %>',
-                partials: "./src/partials/**/*.hbs",
-                helpers: "./src/helpers/**/*.js"
+                  layout: "./src/layouts/course.html",
+                  pages: '<%= data.learningPaths %>'
               },
               files: {
-                './src/pages/learningPaths/FinancialLiteracy/': ['!*']
+                './src/pages/courses/<%= data.learningPaths.filename %>': ['!*']
               }
-            }
+            }*/
         },
         clean: {
             options: { force: true },
-            all: ['./src/pages/learningPaths/**/*']
+            all: ['./src/pages/learningPaths/**/*', './src/pages/courses/**/*']
         }
     });
 
-
     grunt.loadNpmTasks('grunt-assemble');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.registerTask('test', ['assemble']);
     grunt.registerTask('build', ['clean', 'assemble']);
     grunt.registerTask('default', function () {
       var msg = 'DO NOT USE DIRECTLY\n' +

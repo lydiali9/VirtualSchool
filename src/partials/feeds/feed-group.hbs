@@ -1,4 +1,4 @@
-<div class="feed feed-group" feed-type="{{type}}" {{#compare type "feed-completion" operator="=="}}data-accordion-group{{/compare}}>
+<div class="feed feed-group" feed-type="{{type}}">
     {{#compare type "feed-categories" operator="=="}}
       {{#each data}}
         {{> postFeed-categories data=(lookup ../learningPaths this)}}
@@ -7,9 +7,6 @@
     {{#compare type "feed-completion" operator="=="}}
       {{#each data}}
         {{> postFeed-completion data=this}}
-      {{/each}}
-      {{#each ../final}}
-        {{> postFeed-completion-additions data=this}}
       {{/each}}
     {{/compare}}
 </div>

@@ -7,8 +7,8 @@ $('document').ready(function(){
           var rtlBool = true;
       }
       else {
-          // scrollDir = 1;
-          // rtlBool = false;
+          var scrollDir = 1;
+          var rtlBool = false;
       }
 
       $('.carousel').on('init', function (event, slick) {
@@ -25,39 +25,9 @@ $('document').ready(function(){
         speed: 500,
         slidesToShow: 1,
         slidesToMove: 1,
-        //rtl: rtlBool,
+        rtl: rtlBool,
         prevArrow: $('.slick-prev'),
         nextArrow: $('.slick-next')
-      });
+      })
   }
-});
-
-$('document').ready(function(){
-    if (Cookies.get('loggedin') === "true") {
-        $('.user-menu.loggedOut').addClass('hide');
-        $('.user-menu.loggedIn').removeClass('hide');
-    } else {
-    }
-});
-
-$('document').ready(function(){
-    if ($('textarea').length > 0) {
-      for (var i = 0; i < $('textarea').length; i++) {
-        if ($($('textarea')[i]).attr('value') !== undefined) {
-          $('textarea')[i].value = $($('textarea')[i]).attr('value');
-        }
-      }
-    }
-});
-
-$('document').ready(function(){
-  $("[data-accordion-group] .accordion-title").click(function(){
-    console.log(this);
-    var cid = this.id;
-    $(".accordion").each(function(){
-      if($(this).find(".accordion-title").attr("id") != cid){
-        $(this).foundation('up', $(this).find(".accordion-content"));
-      }
-    });
-  });
 });

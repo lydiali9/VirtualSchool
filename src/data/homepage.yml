@@ -1,71 +1,28 @@
 below-banner-content:
   -
     title: "Is the Virtual Skills School Right for you?"
-guided-navigation-v1:
+guided-navigation:
   title: "Is the Virtual Skills School Right for you?"
   description: "Are you looking to..."
   CTA:
     link-title: "Enroll for Free"
-    link: "register.html"
+    link: "/register.html"
   subitems:
     -
       title: "Expand your horizons with life-long learning?"
       img: "assets/img/homepage/GuidedNav01.png"
-      link: "http://campbbre.ispringlearn.com/content/info/5"
+      link: "/browse.html"
       cssClass: ""
     -
       title: "Become an entrepreneur?"
       img: "assets/img/homepage/GuidedNav02.png"
-      link: "https://vss.talentlms.com/dashboard/index/role:learner"
+      link: "/browse.html"
       cssClass: ""
     -
       title: "Develop skills for your career"
       img: "assets/img/homepage/GuidedNav03.png"
-      link: "browse.html"
+      link: "/browse.html"
       cssClass: ""
-guided-navigation-v2:
-  title: "What the Virtual Skills School offers you"
-  description: "Access skills development courses customized to your needs. Our self-paced courses draw on the latest global know-how and technology in youth and adult learning."
-  CTA:
-    link-title: ""
-    link: ""
-  categories:
-    -
-      icon: "Foundational"
-      subitems:
-        -
-          title: "Foundational Pathways"
-          description: "Did you miss part of your schooling and are now ready to catch up with some pieces of foundational education and get onto a path of increased opportunity and continued learning?"
-    -
-      icon: "21stcentury"
-      subitems:
-        -
-          title: "21st Century Skills"
-          description: "Are you looking to develop or update your skills to help you in school or to get a job, or start a business?"
-    -
-      icon: "Vocational"
-      subitems:
-        -
-          title: "Vocational Pathways"
-          description: "Are you interested in expanding your technical and professional skills to improve your access to jobs or to help you start a business?"
-    -
-      icon: "ChangemakerOrg"
-      subitems:
-        -
-          title: "Changemaker Pathways"
-          description: "This pathway is for changemakers that would like to make a difference in their organizations, companies, communities, schools and families."
-featured-learningPaths:
-  heading:
-    img:
-      path:
-      alt:
-    title: "Featured Learning Paths"
-    description:
-  recommendations:
-    - "FinancialLiteracy"
-    - "GenderIQ"
-    - "DigitalLiteracy"
-    - "BasicsBusinessDev"
 about-headingBlock:
   title: "About the Virtual Skills School"
   description: "The Virtual Skills School provides a virtual learning platform to overcome women’s and girls’ physical, cost and other opportunity barriers, and offers courses and training, certification, and learning pathways. It fosters a next generation of women and men, girls and boys that will:"

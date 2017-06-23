@@ -6,56 +6,56 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="shortcut icon" href="{{root}}assets/img/empowerwomen.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="{{root}}css/app.css"/>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css"/>
 
     <style>
       .global-sprite {
         background-image: url('{{root}}assets/img/globalsprite.png') !important;
       }
     </style>
+
+
+    <script src="assets/js/lib/angular2/system-polyfills.js"></script>
+    <script src="assets/js/lib/angular2/angular2-polyfills.js"></script>
+    <script src="assets/js/lib/angular2/es6-shim.min.js"></script>
+    <script src="assets/js/lib/angular2/system.src.js"></script>
     <script>
-    // Fixes undefined module function in SystemJS bundle
-    function module() {}
+    System.config({
+      packages: {
+        js: {
+          format: 'register',
+          defaultExtension: 'js'
+        }
+      },
+      map: {
+        'app' : 'assets/js/lib/angular2',
+        'js' : 'assets/js/app'
+      }
+    });
     </script>
-
-    <!-- shims:js -->
-    <!-- endinject -->
-
-    <% if (BUILD_TYPE === 'dev') { %>
-    <script src="<%= APP_BASE %>app/system-config.js"></script>
-    <% } %>
-
-    <!-- libs:js -->
-    <!-- endinject -->
-
-    <!-- inject:js -->
-    <!-- endinject -->
-
-    <% if (BUILD_TYPE === 'dev') { %>
+    <script src="assets/js/lib/angular2/Rx.js"></script>
+    <script src="assets/js/lib/angular2/angular2.dev.js"></script>
     <script>
-    System.import('<%= BOOTSTRAP_MODULE %>')
-      .catch(function (e) {
-        console.error(e.stack || e,
-          'Not expecting this error? Report it at https://github.com/mgechev/angular-seed/issues');
-      });
+      System.import('js/boot')
+        .then(null, console.error.bind(console));
     </script>
-    <% } %>
   </head>
   <body class="text-center">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-{{> header }}
+    {{> header}}
 
       {{> body }}
 
-{{> footer}}
 
-{{> loginModal}}
+    {{> footer }}
+
   <!-- build:js scripts/main.js -->
-  <script src="{{root}}js/app.js"></script>
+  <script src="{{root}}assets/js/app.js"></script>
   <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

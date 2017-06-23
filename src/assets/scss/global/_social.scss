@@ -92,16 +92,16 @@ $module: '.social';
         }
 
         &.facebook {
-            background-image: url(../img/icons/share-button/facebook-white.png);
-            background-position: 8px 8px;
+            background-image: url(/assets/img/icons/share-button/facebook-white.png);
+            background-position: 9px 9px;
         }
         &.twitter {
-            background-image: url(../img/icons/share-button/twitter-white.png);
+            background-image: url(/assets/img/icons/share-button/twitter-white.png);
             background-position: 9px 12px;
         }
         &.email {
-            background-image: url(../img/icons/share-button/email-white.png);
-            background-position: 8px 13px;
+            background-image: url(/assets/img/icons/share-button/email-white.png);
+            background-position: 9px 13px;
         }
 
         &:hover {
@@ -112,16 +112,16 @@ $module: '.social';
         }
 
             &.facebook:hover {
-                background-image: url(../img/icons/share-button/facebook.png);
-                background-position: 8px 8px;
+                background-image: url(/assets/img/icons/share-button/facebook.png);
+                background-position: 9px 9px;
             }
             &.twitter:hover {
-                background-image: url(../img/icons/share-button/twitter.png);
+                background-image: url(/assets/img/icons/share-button/twitter.png);
                 background-position: 9px 12px;
             }
             &.email:hover {
-                background-image: url(../img/icons/share-button/email.png);
-                background-position: 8px 13px;
+                background-image: url(/assets/img/icons/share-button/email.png);
+                background-position: 9px 13px;
             }
     }
 }

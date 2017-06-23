@@ -4,14 +4,4 @@
         {{> postCard-simple data=(lookup ../learningPaths this)}}
       {{/each}}
     {{/compare}}
-    {{#compare type "card-deck" operator="=="}}
-      {{#each data}}
-        {{> postCard-deck data=(lookup ../learningPaths this)}}
-      {{/each}}
-    {{/compare}}
-    {{#compare type "card" operator="=="}}
-      {{#each data}}
-        {{> postCard data=(lookup ../learningPaths this)}}
-      {{/each}}
-    {{/compare}}
 </div>

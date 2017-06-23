@@ -13,7 +13,7 @@
     }
 
     .terms {
-  	    margin: .5rem auto .6rem;
+  	    margin: .5rem 0;
 
           @include breakpoint(811px down) {
               text-align: center;
@@ -55,11 +55,6 @@
             font-family: initial;
             font-weight: initial;
   		    }
-
-
-          &:last-child {
-            margin-right: 0;
-          }
 
   		    &:last-child:after {
   			    color: $primary-color;

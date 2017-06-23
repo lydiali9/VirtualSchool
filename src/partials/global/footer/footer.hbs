@@ -2,6 +2,7 @@
     <div class="footer-inner lt-section-padding-large">
         <div class="footer-elements">
           {{>footer-branding}}
+          {{>footer-social}}
         </div>
     </div>
 </div>
@@ -11,8 +12,6 @@
       {{#each site-settings.footer-objects}}
         {{#if link}}
           <li><a href="{{link}}" target="_blank">{{title}}</a></li>
-        {{else if script}}
-          <li><a onclick="{{script}}">{{title}}</a></li>
         {{else}}
           <li>{{title}}</li>
         {{/if}}

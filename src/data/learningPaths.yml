@@ -1,75 +1,8 @@
-GenderIQ:
-  data:
-    title: "Gender IQ"
-    author: ""
-    filename: "GenderIQ"
-    likeCount: 60
-    tags:
-      - Finance
-      - Business Development
-      - Entrepreneurship
-    img: "assets/img/learningPaths/featured_gender_IQ.png"
-    short-description: "What are the benefits of equality? What are the costs of inequality? What is unconscious bias and do you have it?"
-    description: ""
-    link: ""
-    link-title: "Explore Learning Path"
-    list-items:
-      - "Executive Communication"
-      - "Strategic Sales"
-      - "Negotiation"
-      - "Developing Professional Rapport"
-    active: false
-DigitalLiteracy:
-  data:
-    title: "Digital Literacy"
-    author: ""
-    filename: "DigitalLiteracy"
-    likeCount: 60
-    tags:
-      - Finance
-      - Business Development
-      - Entrepreneurship
-    img: "assets/img/learningPaths/featured_digital_lit.png"
-    short-description: "Computers and the internet are important parts of our everyday life in the 21st century. Are your skills up to date?"
-    description: ""
-    link: ""
-    link-title: "Explore Learning Path"
-    list-items:
-      - "Executive Communication"
-      - "Strategic Sales"
-      - "Negotiation"
-      - "Developing Professional Rapport"
-    active: false
-BasicsBusinessDev:
-  data:
-    title: "Second Chance Education"
-    author: "Organization ABC"
-    filename: "BasicsBusinessDev"
-    likeCount: 60
-    tags:
-      - Finance
-      - Business Development
-      - Entrepreneurship
-    img: "assets/img/learningPaths/path_2ndchance.jpg"
-    short-description: "Learn basic literacy, numeracy, gain new knowledge, skills and credentials."
-    description: "Courses to help you create value for your organization - large or small."
-    link: ""
-    link-title: "Explore Learning Path"
-    list-items:
-      - "Executive Communication"
-      - "Strategic Sales"
-      - "Negotiation"
-      - "Developing Professional Rapport"
-    active: false
-    courses:
-      -
-        title: "Blah"
-        length: 60
 EntrepreneurshipBasics:
   data:
+    filename: "EntrepreneurshipBasics"
     title: "Basics of Entrepreneurship"
     author: "Organization ABC"
-    filename: "ExpandHorizons"
     likeCount: 60
     tags:
       - Finance
@@ -86,7 +19,6 @@ EntrepreneurshipBasics:
       - "Law for the Entrepreneur"
       - "Building and Leading Effective Teams"
       - "Early Stage Capital"
-    active: false
     courses:
       -
         title: "Introduction to small business ownership"
@@ -149,16 +81,15 @@ EntrepreneurshipBasics:
         length: 60
 ExpandHorizons:
   data:
+    filename: "ExpandHorizons"
     title: "Expand your horizons"
     author: "Organization ABC"
-    filename: "ExpandHorizons"
     likeCount: 60
     tags:
       - Finance
       - Business Development
       - Entrepreneurship
     img: "assets/img/learningPaths/path_ExpandYourHorizons.png"
-    short-description: "Survey courses focusing on general knowledge you can use to build upon for the future."
     description: "Survey courses focusing on general knowledge you can use to build upon for the future."
     link: ""
     link-title: "Explore Learning Path"
@@ -167,150 +98,44 @@ ExpandHorizons:
       - "Applied Sciences"
       - "Gender Issues in the Workplace"
       - "Computer Science"
-    active: false
     courses:
       -
         title: "Blah"
         length: 60
-FinancialLiteracy:
-  data:
-    title: "Financial Literacy"
-    author: "Pricewaterhouse Coopers"
-    filename: "FinancialLiteracy"
-    likeCount: 60
-    tags:
-      - Finance
-      - Business Development
-      - Entrepreneurship
-    img: "assets/img/learningPaths/path_FinancialLiteracy.jpg"
-    short-description: "In today’s world, everyone needs to be financial literate. This pathway starts from basic financial concepts and progresses with intermediary to more advanced courses."
-    description: "Being financial literate is more important than ever with more complex financial products and increased financial responsibility being placed on the consumer. This introduction to financial literacy will help you make financially responsible decisions around your everyday life decisions. It will allow you to spend less and save more and reach your financial goals."
-    link: ""
-    link-title: "Explore Learning Path"
-    list-items:
-      - "Ornare Mattis Bibendum"
-      - "Justo Elit Cras"
-      - "Tortor Euismod Vestibulum Justo"
-      - "Consectetur Ipsum Pharetra Etiam Malesuada"
-      - "Elit Ipsum Egestas"
-    active: true
-    courses:
-      -
-        title: "Introduction to Financial Literacy"
-        length: 60
-        modules:
-          FiveReasonswhyyouShouldhaveaFinancialPlan:
-            data:
-              module-id: 1
-              title: "What is a Financial Plan and Why Does Everyone Need One?"
-              active: true
-          FourCommonSourcesofIncomeinahousehold:
-            data:
-              module-id: 2
-              title: "Common Sources of Income"
-              type: "Video"
-              length: 15
-              featured-media: "YOUTUBE IFRAME"
-              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
-              active: true
-          ReadingAssignment:
-            data:
-              title: "Reading Assignment"
-              type: "Challenge"
-              active: true
-              optional: true
-          SixCommonCategoriesforExpensesinahousehold:
-            data:
-              module-id: 3
-              title: "Common Categories of Expenses"
-              type: "Video"
-              length: 15
-              featured-media: "YOUTUBE IFRAME"
-              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
-              active: true
-          CreateABudgetForYourHousehold:
-            data:
-              title: "Create a budget for your household"
-              type: "Challenge"
-              active: false
-              optional: true
-          Creatingyouryearlybudget:
-            data:
-              module-id: 4
-              title: "Creating your monthly budget"
-              type: "Video"
-              length: 15
-              featured-media: "YOUTUBE IFRAME"
-              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
-          FiveWaystobettermanageyourExpenses:
-            data:
-              module-id: 5
-              title: "Manage Your Expenses"
-              type: "Video"
-              length: 15
-              featured-media: "YOUTUBE IFRAME"
-              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
-          FourEssentialFormalFinancialServicesthatyouShouldKnowAbout:
-            data:
-              module-id: 6
-              title: "Essential Formal Financial Services that you Should Know About"
-              type: "Video"
-              length: 15
-              featured-media: "YOUTUBE IFRAME"
-              iframe: "https://www.youtube.com/embed/h9o5Zx7m4Fs"
-      -
-        title: "Gender IQ"
-        length: 60
-        modules:
-          WelcomeToGenderIQ:
-            data:
-              module-id: 1
-              title: "Welcome"
-              type: "Image"
-              active: true
-          UnderstandingGender:
-            data:
-              module-id: 2
-              title: "Understanding Gender"
-              type: "Image"
-              active: true
-          CostsOfGenderEquality:
-            data:
-              module-id: 3
-              title: "Cost of Gender inequality"
-              type: "Flash"
-              active: false
-          BenefitsOfGenderEquality:
-            data:
-              module-id: 4
-              title: "Benefits of Gender Equality"
-              type: "Flash"
-          CallToAction:
-            data:
-              module-id: 5
-              title: "Call to Action"
-              type: "Flash"
-    final:
-      -
-        title: "Final Assessment"
-        length: 60
-        type: "assessment"
-      -
-        title: "Certificate"
-        type: "certificate"
-
+BasicsBusinessDev:
+    data:
+      filename: "BasicsBusinessDev"
+      title: "Basics of Business Development"
+      author: "Organization ABC"
+      likeCount: 60
+      tags:
+        - Finance
+        - Business Development
+        - Entrepreneurship
+      img: "assets/img/learningPaths/path_BasicsBusinessDev.png"
+      description: "Courses to help you create value for your organization - large or small."
+      link: ""
+      link-title: "Explore Learning Path"
+      list-items:
+        - "Executive Communication"
+        - "Strategic Sales"
+        - "Negotiation"
+        - "Developing Professional Rapport"
+      courses:
+        -
+          title: "Blah"
+          length: 60
 Foundational:
   data:
+    filename: "Foundational"
     title: "Foundational"
     author: "Organization ABC"
-    filename: "Foundational"
     likeCount: 60
     tags:
       - Finance
       - Business Development
       - Entrepreneurship
     img: "assets/img/learningPaths/featured_Foundational.png"
-    short-description: "Learning paths in this section cover the foundational subjects typically covered throughout secondary educations courses. Learning paths in this area may be best for you if you were unable to complete secondary education or need a refresher."
     description: "Learning paths in this section cover the foundational subjects typically covered throughout secondary educations courses. Learning paths in this area may be best for you if you were unable to complete secondary education or need a refresher."
     link: ""
     link-title: "View More"
@@ -323,23 +148,21 @@ Foundational:
       - "Art & Design"
       - "World History"
       - "Biology"
-    active: false
     courses:
       -
         title: "Test"
         length: 60
 SkillsForLife:
   data:
+    filename: "SkillsForLife"
     title: "Skills for Life"
     author: "Organization ABC"
-    filename: "SkillsForLife"
     likeCount: 60
     tags:
       - Finance
       - Business Development
       - Entrepreneurship
     img: "assets/img/learningPaths/featured_SkillsForLife.png"
-    short-description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
     description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
     link: ""
     link-title: "View More"
@@ -351,23 +174,21 @@ SkillsForLife:
       - "Financial Literacy"
       - "Critical-thinking skills"
       - "Social and Cultural Awareness"
-    active: false
     courses:
       -
         title: "Test"
         length: 60
 Vocational:
   data:
+    filename: "Vocational"
     title: "Vocational"
     author: "Organization ABC"
-    filename: "Vocational"
     likeCount: 60
     tags:
       - Finance
       - Business Development
       - Entrepreneurship
     img: "assets/img/learningPaths/featured_Vocational.png"
-    short-description: "Learning paths in this section relate to specific career options where there's significant potential for employment opportunity. Pathways in this area will provide you with the core skills needed to enter a particular line of work."
     description: "Learning paths in this section relate to specific career options where there's significant potential for employment opportunity. Pathways in this area will provide you with the core skills needed to enter a particular line of work."
     link: ""
     link-title: "View More"
@@ -380,7 +201,6 @@ Vocational:
       - "Computer Networks"
       - "General Contracting"
       - "Software Development"
-    active: false
     courses:
       -
         title: "Test"

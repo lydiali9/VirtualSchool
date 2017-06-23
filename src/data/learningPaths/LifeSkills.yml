@@ -7,7 +7,6 @@ data:
     - Business Development
     - Entrepreneurship
   img: "assets/img/learningPaths/featured_SkillsForLife.png"
-  short-description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
   description: "Learning paths in this section cover the 21st century skills needed to succeed in today and tomorrow's world. Each path covers a variety of courses and material that relates to the overall theme selected."
   link: ""
   link-title: "View More"
@@ -19,7 +18,6 @@ data:
     - "Financial Literacy"
     - "Critical-thinking skills"
     - "Social and Cultural Awareness"
-  active: false
   courses:
     -
       title: "Test"

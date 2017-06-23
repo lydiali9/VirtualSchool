@@ -1,16 +1,26 @@
 {
-  "name": "VirtualSchool",
+  "name": "UNW_VirtualSchool",
   "version": "1.0.0",
-  "description": "Virtual School LMS Prototype",
+  "description": "UNWomen Virtual School LMS Prototype",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production",
     "development": "gulp build --development"
   },
-  "author": "Lynn Li <648823000@qq.com>",
+  "author": "AARON BAIDEME <baideme.aaron@pwc.com>",
   "license": "MIT",
   "devDependencies": {
+
+    "angular2": "2.0.0-beta.2",
+    "systemjs": "0.19.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.10",
+    "gulp-typescript": "^2.10.0",
+
     "browser-sync": "^2.17.2",
     "chai": "3.5.0",
     "decode-html": "1.0.2",
@@ -22,7 +32,6 @@
     "gulp": "^3.9.1",
     "gulp-add-src": "^0.2.0",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-changed": "^1.3.2",
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.0",
@@ -58,6 +67,10 @@
     "style-sherpa": "^1.0.2",
     "what-input": "^4.0.1",
     "yargs": "^6.0.0"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
   "private": true
 }

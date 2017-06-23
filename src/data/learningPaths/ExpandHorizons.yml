@@ -7,7 +7,6 @@ data:
     - Business Development
     - Entrepreneurship
   img: "assets/img/learningPaths/path_ExpandYourHorizons.png"
-  short-description: "Survey courses focusing on general knowledge you can use to build upon for the future."
   description: "Survey courses focusing on general knowledge you can use to build upon for the future."
   link: ""
   link-title: "Explore Learning Path"
@@ -16,7 +15,6 @@ data:
     - "Applied Sciences"
     - "Gender Issues in the Workplace"
     - "Computer Science"
-  active: false
   courses:
     -
       title: "Blah"

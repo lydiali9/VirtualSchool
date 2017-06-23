@@ -16,8 +16,14 @@ footer-objects:
     title: "Copyright © 2016 Empower Women. All Rights Reserved."
     link: ""
   -
-    title: "Reset"
-    script: "UNWomen.VS.modules.deleteAllCookies()"
+    title: "Code of Conduct"
+    link: "http://ewqa.eastus2.cloudapp.azure.com/en/code-of-conduct"
+  -
+    title: "Privacy Policy"
+    link: "http://ewqa.eastus2.cloudapp.azure.com/en/privacy-policy"
+  -
+    title: "Contact"
+    link: "mailto:empower.women@unwomen.org"
 footer-branding:
   sponsor-1:
     title: "Facilitated By"

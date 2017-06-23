@@ -8,14 +8,12 @@
   input {
       outline: none;
   }
-  &:not(.login-form) {
-    .input-wrapper {
-      @include flex-grid-column(6, 4rem);
-      margin-top: .5rem;
-      margin-bottom: .5rem;
-      @include breakpoint(small only) {
-        @include flex-grid-column(12, 2rem);
-      }
+  .input-wrapper {
+    @include flex-grid-column(6, 4rem);
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    @include breakpoint(small only) {
+      @include flex-grid-column(12, 2rem);
     }
   }
   .input-wrapper > label {
@@ -46,7 +44,7 @@
     }
 
     &:disabled, &.disabled {
-        background-color: lighten($light-gray, 90);
+        background-color: $light-gray;
     }
   }
 

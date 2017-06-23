@@ -6,7 +6,7 @@
           {{/if}}
         </span>
       </label>
-        <select name="@field" class="select" {{#if required}}required{{/if}} {{#if multiple}}multiple{{/if}} {{#if pattern}}data-validator="{{pattern}}"{{/if}} {{#if disabled}}disabled{{/if}}>
+        <select name="@field" class="select" {{#if required}}required{{/if}} {{#if multiple}}multiple{{/if}} {{#if pattern}}data-validator="{{pattern}}"{{/if}}>
           {{#each options}}
                     <option value="{{this}}" {{#compare 'this' '@../title' operator='=='}}"selected=\"selected\"" {{/compare}}>{{this}}</option>
           {{/each}}

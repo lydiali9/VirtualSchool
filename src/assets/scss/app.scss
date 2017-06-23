@@ -28,11 +28,8 @@
 @include foundation-media-object;
 @include foundation-pagination;
 @include foundation-progress-bar;
-@include foundation-reveal;
-@include foundation-switch;
 @include foundation-slider;
 @include foundation-sticky;
-@include foundation-tabs;
 @include foundation-thumbnail;
 @include foundation-title-bar;
 @include foundation-top-bar;
@@ -41,10 +38,9 @@
 @include motion-ui-animations;
 
 // Custom Dev - Uses gulp-sass-glob
-
-@import "./global/**/*.scss";
-@import "./components/**/*.scss";
-@import "./pages/**/*.scss";
+@import "global/**/*.scss";
+@import "components/**/*.scss";
+//@import "pages/**/*.scss";
 
 // Import print stylesheet
-@import './print.scss'; // In-progress.
+@import 'print.scss'; // In-progress.

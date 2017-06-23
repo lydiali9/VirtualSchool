@@ -4,126 +4,15 @@ $module: '.card';
 #{$module} {
   &-group {
     @include flex-grid-row();
-    @include flex-align(center, stretch)
-
-    // Default Card Component Settings
-    .card-column {
-       color: initial;
-       position: relative;
-       text-align: left;
-       margin-bottom: 1rem;
-       @include flex-grid-column(3, 2rem);
-
-       @include breakpoint(medium only) {
-         @include flex-grid-column(4, 2rem);
-       }
-
-       @include breakpoint(phablet only) {
-         @include flex-grid-column(6, 2rem);
-       }
-
-       @include breakpoint(iphone down) {
-         @include flex-grid-column(12, 3rem);
-       }
-
-       &[status="inactive"] {
-         &:before {
-           content: "Upcoming";
-           position: absolute;
-           display: block;
-           background: white;
-           padding: 5px 10px;
-           font-weight: bold;
-           font-size: 12px;
-           text-transform: uppercase;
-           top: 1px;
-           left: 18px;
-           z-index: 1;
-         }
-
-         .card {
-           opacity: .7
-         }
-       }
-
-       &[status="active"] {
-         .card {
-           &:hover {
-             background: $pale-gray;
-             cursor: pointer;
-           }
-         }
-       }
-
-       .card {
-         border: 1px solid $light-gray;
-         padding-left: 10px;
-         padding-right: 10px;
-         height: 100%;
-       }
-
-       .featured-img {
-         padding: 10px 0;
-       }
-
-      .title {
-        @include type('header', 'small');
-      }
-
-      .description {
-        &:after {
-          display: none;
-          content: "------";
-          margin: 0.25rem 0;
-        }
-        margin: 0;
-      }
-
-      .link-back {
-        font-size: .875rem;
-        margin-top: 0.5rem;
-        display: block;
-        font: {
-          weight: 400;
-        }
-      }
-    }
-
-    &[card-type="card"] {
-      .card-column {
-        .card {
-          padding-bottom: 10px;
-        }
-      }
-    }
 
     &[card-type="card-simple"] {
       .card-column {
         @include flex-grid-column(4, 8rem);
-
-        @include breakpoint(medium down) {
-            @include flex-grid-column(4,2rem);
-        }
-
-          @include breakpoint(iphone down) {
-            @include flex-grid-column(12,4rem);
-        }
-
         text-align: left;
         position: relative;
 
         &:first-child {
           left: -3rem;
-        }
-
-        @include breakpoint(medium down) {
-          &:first-child {
-            left: 0;
-          }
-
-          &:last-child {
-            right: 0!important;
-          }
         }
 
         &:last-child {
@@ -134,6 +23,18 @@ $module: '.card';
           margin-bottom: 1rem;
           height: 175px;
           width: 100%;
+        }
+
+        .title {
+          @include type('header', 'small');
+        }
+        .description {
+          &:after {
+            display: block;
+            content: "------";
+            margin: 0.25rem 0;
+          }
+          margin: 0;
         }
 
         .listing {
@@ -150,99 +51,13 @@ $module: '.card';
             margin-left: 1rem;
           }
         }
-      }
-    }
-
-    &[card-type="card-deck"] {
-       .card-column {
-      //   position: relative;
-      //   text-align: left;
-      //   margin-bottom: 1rem;
-      //   @include flex-grid-column(3, 2rem);
-      //
-      //   @include breakpoint(medium only) {
-      //     @include flex-grid-column(4, 2rem);
-      //   }
-      //
-      //   @include breakpoint(phablet only) {
-      //     @include flex-grid-column(6, 2rem);
-      //   }
-      //
-      //   @include breakpoint(iphone down) {
-      //     @include flex-grid-column(12, 3rem);
-      //   }
-      //
-      //   &[status="inactive"] {
-      //     &:before {
-      //       content: "Upcoming";
-      //       position: absolute;
-      //       display: block;
-      //       background: white;
-      //       padding: 5px 10px;
-      //       font-weight: bold;
-      //       font-size: 12px;
-      //       text-transform: uppercase;
-      //       top: 1px;
-      //       left: 18px;
-      //       z-index: 1;
-      //     }
-      //
-      //     .card {
-      //       opacity: .7
-      //     }
-      //   }
-      //
-      //   &[status="active"] {
-      //     .card {
-      //       &:hover {
-      //         background: $pale-gray;
-      //         cursor: pointer;
-      //       }
-      //     }
-      //   }
-      //
-      //   .card {
-      //     border: 1px solid $light-gray;
-      //     padding-left: 10px;
-      //     padding-right: 10px;
-      //     height: 100%;
-      //   }
-      //
-      //   .featured-img {
-      //     padding: 10px 0;
-      //   }
-
-        .listing {
-          margin: 0;
-          margin-bottom:0.5rem;
-          text-align: center;
-
-          li {
-            font-size: 10px;
-            border: 1px solid $medium-gray;
-            width: auto;
-            display: inline-block;
-            padding: 0 4px;
-            border-radius: 6px;
-
-            &:hover {
-              background-color: $secondary-color;
-              color: $white;
-              cursor: pointer;
-            }
-          }
-        }
 
         .link-back {
-          text-align: right;
-          margin-bottom: 0.5rem;
-          font-weight: 700;
-
-          &:after {
-            content: ">";
-            top: 1px;
-            position: relative;
-            margin-left: 4px;
+          font-size: .875rem;
+          margin-top: 0.5rem;
+          display: block;
+          font: {
+            weight: 400;
           }
         }
       }

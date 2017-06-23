@@ -1,16 +1,17 @@
-@mixin ew-navigation{
+@mixin ew-navigation-desktop{
+
   position: relative;
 
 
   &-menu {
-      @include flex-align-self(middle);
+      @include flex-grid-column-align(middle);
   }
 
   .menu {
     &-item {
       display: flex;
       @include flex-grid-column(shrink, 0);
-      @include flex-align-self(middle);
+      @include flex-grid-column-align(middle);
       border-right: 1px solid map-get($foundation-palette, primary);
       padding-left: 0;
       padding-right: 0;
@@ -74,6 +75,24 @@
       }
     }
   }
+  &-logo {
+    position: relative;
+    width: auto;
+    left: auto;
+    margin-left: auto;
+
+    a {
+      width: auto;
+      margin: initial;
+    }
+    .global-sprite {
+      width: 324px;
+      height: 49px;
+      background-position: 0px -55px;
+      background-size: 100%;
+      margin: 8px 0;
+    }
+  }
 
 
   .menu-submenu {
@@ -88,7 +107,7 @@
 
     &-item {
       @include flex-grid-column(null, 15px);
-      @include flex-align-self(top);
+      @include flex-grid-column-align(top);
       display: flex;
       text-align: center;
 

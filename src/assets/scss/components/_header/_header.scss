@@ -7,7 +7,7 @@
     display:none;
     @include breakpoint(large) {
       @include flex-grid-row();
-      @include flex-align(right);
+      @include flex-grid-row-align(right);
     }
   }
 
@@ -84,7 +84,7 @@
         }
 
         .header-link-notification{
-            margin-left:0.15rem;
+            margin-left:0.5rem;
         }
     }
 }

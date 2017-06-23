@@ -16,35 +16,4 @@
       @include flex-grid-column(12);
     }
   }
-
-
-  &.headingBlock-img {
-    .featured-img {
-      width: 260px;
-      margin-right: 2rem;
-      margin-top: 0.5rem;
-      max-height: 180px;
-      overflow: hidden;
-
-      &.full {
-        width: 100%;
-        margin-right: 0;
-      }
-
-      &.half {
-        width: 50%;
-        max-height: 240px;
-        margin: 0.5rem auto;
-        padding-bottom: 0.5rem;
-      }
-    }
-
-    .type-header-large {
-      margin-bottom: .5rem;
-    }
-
-    .description {
-      text-align: left;
-    }
-  }
 }

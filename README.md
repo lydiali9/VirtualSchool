@@ -30,7 +30,7 @@ $ git checkout dev
 3.  Install Modules. Module installation is compatible with npm however we recommend utilizing YARN instead.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ nn
+$ npm install -g yarn
 $ yarn
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 OR (if you prefer old-fashioned)

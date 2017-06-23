@@ -17,7 +17,6 @@ data:
     - "Law for the Entrepreneur"
     - "Building and Leading Effective Teams"
     - "Early Stage Capital"
-  active: false
   courses:
     -
       title: "Introduction to small business ownership"
